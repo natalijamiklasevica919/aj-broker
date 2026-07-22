@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -7,93 +6,77 @@ import { toast } from 'sonner';
 import { ArrowRight } from 'lucide-react';
 
 export function QuickLeadForm() {
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    company: '',
-  });
+  const [formData, setFormData] = useState({ name: '', phone: '', company: '' });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success('Заявка отправлена', {
-      description: 'Мы свяжемся с вами в ближайшее время.',
+    toast.success('Pieteikums nosūtīts', {
+      description: 'Sazināsimies ar jums tuvākajā laikā.',
       duration: 5000,
     });
     setFormData({ name: '', phone: '', company: '' });
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.95 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.6, delay: 0.3 }}
-      className="glass rounded-2xl p-6 lg:p-8 shadow-2xl w-full max-w-md mx-auto"
-      data-testid="quick-lead-form"
-    >
-      <h3 className="text-2xl font-bold text-white mb-6 text-center">
-        Получить бесплатную консультацию
+    <div className="backdrop-blur-xl bg-white/10 border border-white/20 rounded-[2rem] p-8 lg:p-10 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5)] w-full max-w-md mx-auto relative overflow-hidden group">
+      <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent pointer-events-none rounded-[2rem]"></div>
+      
+      <h3 className="text-3xl font-extrabold text-white mb-8 text-center relative z-10 tracking-tight">
+        Saņemt bezmaksas konsultāciju
       </h3>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className="space-y-5 relative z-10">
         <div className="space-y-2">
-          <Label htmlFor="quick-name" className="text-white/90">
-            Имя
-          </Label>
+          <Label htmlFor="quick-name" className="text-white/90 font-bold ml-1">Vārds</Label>
           <Input
             id="quick-name"
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-            placeholder="Иван Иванов"
-            className="bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:border-white focus:ring-white h-12"
+            placeholder="Jānis Bērziņš"
+            className="bg-white/5 border-white/20 text-white placeholder:text-white/40 focus:border-white focus:ring-white h-14 rounded-xl transition-all duration-300 hover:bg-white/10 text-lg shadow-inner"
             required
-            data-testid="input-quick-name"
           />
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="quick-phone" className="text-white/90">
-            Телефон
-          </Label>
+          <Label htmlFor="quick-phone" className="text-white/90 font-bold ml-1">Tālrunis</Label>
           <Input
             id="quick-phone"
             type="tel"
             value={formData.phone}
             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-            placeholder="+7 (999) 000-00-00"
-            className="bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:border-white focus:ring-white h-12"
+            placeholder="+371 20000000"
+            className="bg-white/5 border-white/20 text-white placeholder:text-white/40 focus:border-white focus:ring-white h-14 rounded-xl transition-all duration-300 hover:bg-white/10 text-lg shadow-inner"
             required
-            data-testid="input-quick-phone"
           />
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="quick-company" className="text-white/90">
-            Компания / ИНН
-          </Label>
+          <Label htmlFor="quick-company" className="text-white/90 font-bold ml-1">Uzņēmums / Reģ. nr.</Label>
           <Input
             id="quick-company"
             value={formData.company}
             onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-            placeholder="ООО Ромашка"
-            className="bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:border-white focus:ring-white h-12"
+            placeholder="SIA Ozols"
+            className="bg-white/5 border-white/20 text-white placeholder:text-white/40 focus:border-white focus:ring-white h-14 rounded-xl transition-all duration-300 hover:bg-white/10 text-lg shadow-inner"
             required
-            data-testid="input-quick-company"
           />
         </div>
 
         <Button
           type="submit"
-          className="w-full bg-white text-[#0A3250] hover:bg-[#E2EDF3] h-12 text-base font-semibold mt-4 group"
-          data-testid="button-quick-submit"
+          className="w-full bg-[#6DA4CC] hover:bg-[#5a8fb8] text-white border-0 h-16 text-lg font-extrabold mt-6 shadow-[0_10px_20px_rgba(109,164,204,0.3)] rounded-xl group/btn relative overflow-hidden transition-all hover:-translate-y-1"
         >
-          Узнать условия
-          <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+          <span className="relative z-10 flex items-center justify-center">
+            Uzzināt nosacījumus
+            <ArrowRight className="w-5 h-5 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+          </span>
         </Button>
 
-        <p className="text-xs text-white/50 text-center mt-4">
-          Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности
+        <p className="text-xs text-white/50 text-center mt-6 font-medium">
+          Nospiežot pogu, jūs piekrītat privātuma politikai
         </p>
       </form>
-    </motion.div>
+    </div>
   );
 }

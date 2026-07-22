@@ -1,37 +1,14 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 const faqs = [
-  {
-    question: "В чём разница между брокером и факторинговой компанией?",
-    answer: "Факторинговая компания непосредственно финансирует ваши сделки и несёт кредитный риск. Брокер — это независимый консультант, который анализирует вашу ситуацию и подбирает наилучшие условия среди множества факторов. Наши услуги для клиента бесплатны."
-  },
-  {
-    question: "Сколько стоят ваши услуги?",
-    answer: "Консультация и подбор предложений — полностью бесплатны для вас. Мы получаем вознаграждение от факторинговой компании только после успешного заключения сделки."
-  },
-  {
-    question: "Как быстро можно получить финансирование?",
-    answer: "После получения заявки мы представляем первые предложения в течение 1 рабочего дня. Полное оформление сделки с фактором обычно занимает от 3 до 7 рабочих дней."
-  },
-  {
-    question: "Подходит ли факторинг для малого бизнеса?",
-    answer: "Да. Большинство факторинговых компаний работают с бизнесом от 6 месяцев существования. Требования по объёму финансирования начинаются от нескольких сотен тысяч рублей."
-  },
-  {
-    question: "Мы работаем с покупателями из других регионов — это проблема?",
-    answer: "Нет. Большинство наших партнёров-факторов работают с дебиторами по всей России, а некоторые — и за рубежом."
-  },
-  {
-    question: "Какие документы нужны для начала?",
-    answer: "На первом этапе достаточно заполнить заявку и рассказать о вашей ситуации. Документы запрашивает уже конкретная факторинговая компания на этапе рассмотрения."
-  }
+  { question: "Kāda ir atšķirība starp brokeri un faktoringa uzņēmumu?", answer: "Faktoringa uzņēmums tieši finansē jūsu darījumus un uzņemas kredītrisku. Brokeris ir neatkarīgs konsultants, kas analizē jūsu situāciju un atlasa labākos nosacījumus no daudziem faktoriem. Mūsu pakalpojumi klientam ir bezmaksas." },
+  { question: "Cik maksā jūsu pakalpojumi?", answer: "Konsultācija un piedāvājumu atlase jums ir pilnīgi bezmaksas. Mēs saņemam atlīdzību no faktoringa uzņēmuma tikai pēc veiksmīga darījuma noslēgšanas." },
+  { question: "Cik ātri var saņemt finansējumu?", answer: "Pēc pieteikuma saņemšanas mēs sniedzam pirmos piedāvājumus 1 darba dienas laikā. Pilna darījuma noformēšana ar faktoru parasti aizņem no 3 līdz 7 darba dienām." },
+  { question: "Vai faktorings ir piemērots mazajiem uzņēmumiem?", answer: "Jā. Lielākā daļa faktoringa uzņēmumu strādā ar biznesu, kas darbojas vismaz 6 mēnešus. Finansējuma apjoma prasības sākas no dažiem desmitiem tūkstošu eiro." },
+  { question: "Mēs strādājam ar pircējiem no citām valstīm — vai tas ir problēma?", answer: "Nē. Lielākā daļa mūsu partneruzņēmumu strādā ar debitoriem visā Eiropas Savienībā un ārpus tās." },
+  { question: "Kādi dokumenti ir nepieciešami sākumam?", answer: "Pirmajā posmā pietiek aizpildīt pieteikumu un pastāstīt par savu situāciju. Dokumentus pieprasa konkrētais faktoringa uzņēmums izskatīšanas stadijā." }
 ];
 
 export function FAQ() {
@@ -39,40 +16,34 @@ export function FAQ() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section 
-      id="faq" 
-      ref={ref}
-      className="py-20 lg:py-28 bg-[#E2EDF3]"
-      data-testid="section-faq"
-    >
-      <div className="container mx-auto px-4 lg:px-8">
+    <section id="faq" ref={ref} className="py-24 lg:py-32 bg-[#E2EDF3] relative overflow-hidden">
+      <div className="absolute -top-40 -right-40 w-96 h-96 bg-white/40 rounded-full blur-3xl pointer-events-none"></div>
+      
+      <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-16 lg:mb-20"
         >
-          <h2 className="text-3xl lg:text-5xl font-bold text-[#0A3250] mb-4">
-            Часто задаваемые вопросы
+          <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0A3250] mb-6 tracking-tight">
+            Bieži uzdotie jautājumi
           </h2>
-          <p className="text-lg lg:text-xl text-[#0A3250]/70 max-w-3xl mx-auto">
-            Всё, что нужно знать о работе с нами и факторинге
-          </p>
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="max-w-3xl mx-auto bg-white rounded-2xl shadow-md p-6 lg:p-8"
+          className="max-w-3xl mx-auto bg-white rounded-[2rem] shadow-xl p-8 lg:p-12 border border-white/50"
         >
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq, index) => (
               <AccordionItem key={index} value={`item-${index}`} className="border-[#0A3250]/10 border-b last:border-0">
-                <AccordionTrigger className="text-left text-lg font-semibold text-[#0A3250] hover:text-[#6DA4CC] hover:no-underline py-4">
+                <AccordionTrigger className="text-left text-lg lg:text-xl font-extrabold text-[#0A3250] hover:text-[#6DA4CC] hover:no-underline py-6 data-[state=open]:text-[#6DA4CC] transition-colors">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-[#0A3250]/70 text-base leading-relaxed pb-4">
+                <AccordionContent className="text-[#0A3250]/70 text-lg leading-relaxed pb-6 font-medium">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

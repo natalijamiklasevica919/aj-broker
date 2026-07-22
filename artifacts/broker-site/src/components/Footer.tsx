@@ -1,92 +1,45 @@
 export function Footer() {
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      const offset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <footer className="bg-[#0A3250] text-white py-16" data-testid="footer">
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          {/* Logo and Info */}
+    <footer className="bg-[#0A3250] text-[#E2EDF3] py-20 border-t border-white/10 relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#6DA4CC]/50 to-transparent"></div>
+      
+      <div className="container mx-auto px-4 lg:px-8 relative z-10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div>
-            <h3 className="text-2xl font-bold mb-4" data-testid="text-footer-logo">
-              FinBroker
-            </h3>
-            <p className="text-white/70 leading-relaxed" data-testid="text-footer-tagline">
-              Ваш надёжный партнёр в получении факторингового финансирования
+            <h3 className="text-3xl font-extrabold mb-6 text-white tracking-tight">FinBroker</h3>
+            <p className="text-[#E2EDF3]/70 leading-relaxed font-medium text-lg">
+              Faktoringa brokeris Baltijā
             </p>
           </div>
-
-          {/* Navigation */}
           <div>
-            <h4 className="font-semibold mb-4" data-testid="text-footer-nav-title">
-              Навигация
-            </h4>
-            <nav className="space-y-2">
-              <button
-                onClick={() => scrollToSection('services')}
-                className="block text-white/70 hover:text-white transition-colors"
-                data-testid="button-footer-services"
-              >
-                Услуги
-              </button>
-              <button
-                onClick={() => scrollToSection('how-it-works')}
-                className="block text-white/70 hover:text-white transition-colors"
-                data-testid="button-footer-how-it-works"
-              >
-                Как мы работаем
-              </button>
-              <button
-                onClick={() => scrollToSection('representatives')}
-                className="block text-white/70 hover:text-white transition-colors"
-                data-testid="button-footer-representatives"
-              >
-                Региональные представители
-              </button>
-              <button
-                onClick={() => scrollToSection('contact')}
-                className="block text-white/70 hover:text-white transition-colors"
-                data-testid="button-footer-contact"
-              >
-                Оставить заявку
-              </button>
+            <h4 className="font-bold text-xl mb-6 text-white tracking-tight">Navigācija</h4>
+            <nav className="space-y-4">
+              <button onClick={() => scrollToSection('services')} className="block text-[#E2EDF3]/70 hover:text-white transition-colors font-medium">Pakalpojumi</button>
+              <button onClick={() => scrollToSection('how-it-works')} className="block text-[#E2EDF3]/70 hover:text-white transition-colors font-medium">Kā mēs strādājam</button>
+              <button onClick={() => scrollToSection('representatives')} className="block text-[#E2EDF3]/70 hover:text-white transition-colors font-medium">Pārstāvji</button>
+              <button onClick={() => scrollToSection('contact')} className="block text-[#E2EDF3]/70 hover:text-white transition-colors font-medium">Pieteikties</button>
             </nav>
           </div>
-
-          {/* Contact Placeholders */}
           <div>
-            <h4 className="font-semibold mb-4" data-testid="text-footer-contact-title">
-              Контакты
-            </h4>
-            <div className="space-y-2 text-white/70">
-              <p data-testid="text-footer-phone">Телефон: [указывается позже]</p>
-              <p data-testid="text-footer-email">Email: [указывается позже]</p>
+            <h4 className="font-bold text-xl mb-6 text-white tracking-tight">Kontakti</h4>
+            <div className="space-y-4 text-[#E2EDF3]/70 font-medium">
+              <p>Tel: [+371 ____ ____]</p>
+              <p>E-pasts: [epasts@domens.lv]</p>
             </div>
           </div>
-
-          {/* Empty column for balance */}
           <div></div>
         </div>
-
-        {/* Bottom Section */}
-        <div className="border-t border-white/10 pt-8 space-y-4">
-          <p className="text-white/70 text-sm" data-testid="text-footer-copyright">
-            © 2025 FinBroker. Все права защищены.
-          </p>
-          <p className="text-white/50 text-xs leading-relaxed max-w-4xl" data-testid="text-footer-disclaimer">
-            FinBroker является брокером и не является кредитной организацией. Мы не выдаём займы и кредиты. Финансирование предоставляется партнёрскими факторинговыми компаниями.
-          </p>
+        <div className="border-t border-white/10 pt-8 space-y-6 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+          <div className="space-y-4 max-w-3xl">
+            <p className="text-[#E2EDF3]/40 text-sm leading-relaxed font-medium">
+              FinBroker ir brokeris un nav kredītiestāde. Mēs neizsniedz aizdevumus vai kredītus. Finansējumu nodrošina partneru faktoringa uzņēmumi.
+            </p>
+            <p className="text-[#E2EDF3]/60 font-medium text-sm">© 2025 FinBroker. Visas tiesības aizsargātas.</p>
+          </div>
         </div>
       </div>
     </footer>
