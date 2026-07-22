@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "Брокерский сайт"
+version = "1.0.0"
+id = "artifacts/broker-site"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24284
+
+[services.development]
+run = "pnpm --filter @workspace/broker-site run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/broker-site", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/broker-site/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24284"
+BASE_PATH = "/"
