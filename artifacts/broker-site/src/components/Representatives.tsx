@@ -3,10 +3,10 @@ import { useRef } from 'react';
 import { MapPin, Phone, Mail } from 'lucide-react';
 
 const representatives = [
-  { region: 'Rīga un Pierīga', name: '[Pārstāvja vārds]', phone: '[+371 ____ ____]', email: '[epasts@domens.lv]' },
-  { region: 'Vidzeme', name: '[Pārstāvja vārds]', phone: '[+371 ____ ____]', email: '[epasts@domens.lv]' },
-  { region: 'Kurzeme un Zemgale', name: '[Pārstāvja vārds]', phone: '[+371 ____ ____]', email: '[epasts@domens.lv]' },
-  { region: 'Latgale', name: '[Pārstāvja vārds]', phone: '[+371 ____ ____]', email: '[epasts@domens.lv]' },
+  { region: 'Latvija', name: '[Pārstāvja vārds]', phone: '[+371 ____ ____]', email: '[epasts@domens.lv]' },
+  { region: 'Francija', name: '[Pārstāvja vārds]', phone: '[+33 __ __ __ __ __]', email: '[email@domaine.fr]' },
+  { region: 'Vācija', name: '[Pārstāvja vārds]', phone: '[+49 ___ _______]', email: '[email@domain.de]' },
+  { region: 'Igaunija', name: '[Pārstāvja vārds]', phone: '[+372 ____ ____]', email: '[email@domeen.ee]' },
 ];
 
 export function Representatives() {

@@ -24,7 +24,7 @@ export function AnnouncementBar() {
               <span className="hidden md:inline text-white/50">•</span>
               <span>Piedāvājuma atlase 1 darba dienas laikā</span>
               <span className="hidden md:inline text-white/50">•</span>
-              <span>Strādājam visā Baltijā</span>
+              <span>Strādājam visā Eiropā</span>
             </div>
             
             <button

@@ -10,9 +10,9 @@ export function Footer() {
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div>
-            <h3 className="text-3xl font-extrabold mb-6 text-white tracking-tight">FinBroker</h3>
+            <h3 className="text-3xl font-extrabold mb-6 text-white tracking-tight">AJ Broker</h3>
             <p className="text-[#E2EDF3]/70 leading-relaxed font-medium text-lg">
-              Faktoringa brokeris Baltijā
+              Faktoringa brokeris Eiropā
             </p>
           </div>
           <div>
@@ -36,9 +36,9 @@ export function Footer() {
         <div className="border-t border-white/10 pt-8 space-y-6 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div className="space-y-4 max-w-3xl">
             <p className="text-[#E2EDF3]/40 text-sm leading-relaxed font-medium">
-              FinBroker ir brokeris un nav kredītiestāde. Mēs neizsniedz aizdevumus vai kredītus. Finansējumu nodrošina partneru faktoringa uzņēmumi.
+              AJ Broker ir brokeris un nav kredītiestāde. Mēs neizsniedz aizdevumus vai kredītus. Finansējumu nodrošina partneru faktoringa uzņēmumi.
             </p>
-            <p className="text-[#E2EDF3]/60 font-medium text-sm">© 2025 FinBroker. Visas tiesības aizsargātas.</p>
+            <p className="text-[#E2EDF3]/60 font-medium text-sm">© 2025 AJ Broker. Visas tiesības aizsargātas.</p>
           </div>
         </div>
       </div>

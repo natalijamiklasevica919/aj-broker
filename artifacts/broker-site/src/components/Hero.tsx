@@ -24,7 +24,7 @@ export function Hero() {
             className="max-w-2xl"
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#6DA4CC]/40 bg-[#6DA4CC]/10 backdrop-blur-md mb-8 shadow-inner shadow-white/5">
-              <span className="text-[#E2EDF3] text-sm font-bold tracking-wider uppercase">Faktoringa brokeris Baltijā</span>
+              <span className="text-[#E2EDF3] text-sm font-bold tracking-wider uppercase">Faktoringa brokeris Eiropā</span>
             </div>
 
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-8 leading-[1.1] tracking-tight">
@@ -46,7 +46,7 @@ export function Hero() {
               </div>
               <div className="flex items-center gap-3 bg-white/5 px-5 py-3 rounded-2xl backdrop-blur-sm border border-white/10 shadow-lg">
                 <MapPin className="w-5 h-5 text-[#6DA4CC]" />
-                <span className="text-white font-bold tracking-wide">Visa Baltija</span>
+                <span className="text-white font-bold tracking-wide">Visa Eiropa</span>
               </div>
             </div>
 

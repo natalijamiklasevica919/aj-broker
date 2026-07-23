@@ -6,7 +6,6 @@ import { TrustBadges } from '@/components/TrustBadges';
 import { Services } from '@/components/Services';
 import { Benefits } from '@/components/Benefits';
 import { HowItWorks } from '@/components/HowItWorks';
-import { Testimonials } from '@/components/Testimonials';
 import { Representatives } from '@/components/Representatives';
 import { FAQ } from '@/components/FAQ';
 import { ContactForm } from '@/components/ContactForm';
@@ -28,7 +27,6 @@ export default function Home() {
         <Services />
         <Benefits />
         <HowItWorks />
-        <Testimonials />
         <Representatives />
         <FAQ />
         <ContactForm />

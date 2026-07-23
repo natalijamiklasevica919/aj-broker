@@ -30,7 +30,7 @@ export function Header() {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <button onClick={() => scrollToSection('hero')} className="text-white font-extrabold text-2xl tracking-tight hover:opacity-90 transition-opacity" data-testid="button-logo">
-            FinBroker
+            AJ Broker
           </button>
 
           <nav className="hidden lg:flex items-center gap-8" data-testid="nav-desktop">
