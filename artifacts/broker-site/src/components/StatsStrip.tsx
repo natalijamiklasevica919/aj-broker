@@ -1,17 +1,19 @@
 import { motion, useInView, useAnimation } from 'framer-motion';
 import { useRef, useEffect } from 'react';
-
-const stats = [
-  { value: '500+', label: 'apstrādāto pieteikumu' },
-  { value: '30+', label: 'partneru faktoringa uzņēmumu' },
-  { value: '1 diena', label: 'piedāvājuma atlases termiņš' },
-  { value: '0 €', label: 'konsultācijas izmaksas' },
-];
+import { useLanguage } from '@/i18n/LanguageContext';
 
 export function StatsStrip() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-50px' });
   const controls = useAnimation();
+  const { t } = useLanguage();
+
+  const stats = [
+    { value: t.stats_1_value, label: t.stats_1_label },
+    { value: t.stats_2_value, label: t.stats_2_label },
+    { value: t.stats_3_value, label: t.stats_3_label },
+    { value: t.stats_4_value, label: t.stats_4_label },
+  ];
 
   useEffect(() => {
     if (isInView) controls.start('visible');

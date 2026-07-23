@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/i18n/LanguageContext';
 
 export function StickyContactBar() {
   const [isVisible, setIsVisible] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,13 +37,13 @@ export function StickyContactBar() {
         >
           <div className="container mx-auto px-4 py-4 lg:py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-white font-extrabold text-lg lg:text-xl tracking-tight">
-              Gatavi sākt? Iegūstiet bezmaksas konsultāciju
+              {t.sticky_text}
             </p>
             <Button
               onClick={scrollToContact}
               className="bg-[#6DA4CC] hover:bg-[#5a8fb8] text-white font-extrabold w-full sm:w-auto px-10 py-6 h-auto text-lg rounded-xl shadow-lg transition-transform hover:-translate-y-0.5"
             >
-              Pieteikties
+              {t.sticky_cta}
             </Button>
           </div>
         </motion.div>

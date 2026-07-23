@@ -1,8 +1,10 @@
 import { QuickLeadForm } from './QuickLeadForm';
 import { CheckCircle2, Clock, MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useLanguage } from '@/i18n/LanguageContext';
 
 export function Hero() {
+  const { t } = useLanguage();
   return (
     <section id="hero" className="relative min-h-[100dvh] flex items-center justify-center pt-24 pb-20 lg:pt-32 overflow-hidden bg-[#0A3250]" data-testid="section-hero">
       {/* Animated Mesh Gradient Background */}
@@ -24,29 +26,29 @@ export function Hero() {
             className="max-w-2xl"
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#6DA4CC]/40 bg-[#6DA4CC]/10 backdrop-blur-md mb-8 shadow-inner shadow-white/5">
-              <span className="text-[#E2EDF3] text-sm font-bold tracking-wider uppercase">Faktoringa brokeris Eiropā</span>
+              <span className="text-[#E2EDF3] text-sm font-bold tracking-wider uppercase">{t.hero_badge}</span>
             </div>
 
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-8 leading-[1.1] tracking-tight">
-              Jūsu uzticamais <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6DA4CC] to-[#E2EDF3] drop-shadow-sm">partneris</span> darījumu finansēšanā
+              {t.hero_title_1} <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6DA4CC] to-[#E2EDF3] drop-shadow-sm">{t.hero_title_highlight}</span> {t.hero_title_2}
             </h1>
             
             <p className="text-lg md:text-xl text-[#E2EDF3]/90 mb-10 leading-relaxed font-medium">
-              Mēs esam brokeris — nefinansējam paši, bet atrodam jums labākos faktoringa nosacījumus no 30+ pārbaudītiem partneriem. Bez slēptām komisijām.
+              {t.hero_subtitle}
             </p>
 
             <div className="flex flex-col sm:flex-row flex-wrap gap-4 md:gap-4 mb-10">
               <div className="flex items-center gap-3 bg-white/5 px-5 py-3 rounded-2xl backdrop-blur-sm border border-white/10 shadow-lg">
                 <CheckCircle2 className="w-5 h-5 text-[#6DA4CC]" />
-                <span className="text-white font-bold tracking-wide">Bezmaksas</span>
+                <span className="text-white font-bold tracking-wide">{t.hero_badge_free}</span>
               </div>
               <div className="flex items-center gap-3 bg-white/5 px-5 py-3 rounded-2xl backdrop-blur-sm border border-white/10 shadow-lg">
                 <Clock className="w-5 h-5 text-[#6DA4CC]" />
-                <span className="text-white font-bold tracking-wide">1 darba dienā</span>
+                <span className="text-white font-bold tracking-wide">{t.hero_badge_speed}</span>
               </div>
               <div className="flex items-center gap-3 bg-white/5 px-5 py-3 rounded-2xl backdrop-blur-sm border border-white/10 shadow-lg">
                 <MapPin className="w-5 h-5 text-[#6DA4CC]" />
-                <span className="text-white font-bold tracking-wide">Visa Eiropa</span>
+                <span className="text-white font-bold tracking-wide">{t.hero_badge_geo}</span>
               </div>
             </div>
 
@@ -59,7 +61,7 @@ export function Hero() {
                 ))}
               </div>
               <p className="text-[#E2EDF3]/80 font-bold tracking-wide">
-                Jau uzticās 500+ uzņēmumi
+                {t.hero_social_proof}
               </p>
             </div>
           </motion.div>

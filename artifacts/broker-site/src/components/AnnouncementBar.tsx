@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { X, CheckCircle2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLanguage } from '@/i18n/LanguageContext';
 
 export function AnnouncementBar() {
   const [isVisible, setIsVisible] = useState(true);
+  const { t } = useLanguage();
 
   return (
     <AnimatePresence>
@@ -19,18 +21,18 @@ export function AnnouncementBar() {
             <div className="flex flex-wrap items-center justify-center gap-2 md:gap-4 text-center tracking-wide">
               <span className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4" />
-                Bezmaksas konsultācija
+                {t.announcement_free}
               </span>
               <span className="hidden md:inline text-white/50">•</span>
-              <span>Piedāvājuma atlase 1 darba dienas laikā</span>
+              <span>{t.announcement_speed}</span>
               <span className="hidden md:inline text-white/50">•</span>
-              <span>Strādājam visā Eiropā</span>
+              <span>{t.announcement_geo}</span>
             </div>
             
             <button
               onClick={() => setIsVisible(false)}
               className="absolute right-4 p-1.5 hover:bg-white/20 rounded-full transition-colors"
-              aria-label="Aizvērt"
+              aria-label={t.announcement_close}
               data-testid="button-close-announcement"
             >
               <X className="w-4 h-4" />

@@ -1,4 +1,8 @@
+import { useLanguage } from '@/i18n/LanguageContext';
+
 export function Footer() {
+  const { t } = useLanguage();
+  
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -12,23 +16,23 @@ export function Footer() {
           <div>
             <h3 className="text-3xl font-extrabold mb-6 text-white tracking-tight">AJ Broker</h3>
             <p className="text-[#E2EDF3]/70 leading-relaxed font-medium text-lg">
-              Faktoringa brokeris Eiropā
+              {t.footer_tagline}
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-xl mb-6 text-white tracking-tight">Navigācija</h4>
+            <h4 className="font-bold text-xl mb-6 text-white tracking-tight">{t.footer_nav_title}</h4>
             <nav className="space-y-4">
-              <button onClick={() => scrollToSection('services')} className="block text-[#E2EDF3]/70 hover:text-white transition-colors font-medium">Pakalpojumi</button>
-              <button onClick={() => scrollToSection('how-it-works')} className="block text-[#E2EDF3]/70 hover:text-white transition-colors font-medium">Kā mēs strādājam</button>
-              <button onClick={() => scrollToSection('representatives')} className="block text-[#E2EDF3]/70 hover:text-white transition-colors font-medium">Pārstāvji</button>
-              <button onClick={() => scrollToSection('contact')} className="block text-[#E2EDF3]/70 hover:text-white transition-colors font-medium">Pieteikties</button>
+              <button onClick={() => scrollToSection('services')} className="block text-[#E2EDF3]/70 hover:text-white transition-colors font-medium">{t.nav_services}</button>
+              <button onClick={() => scrollToSection('how-it-works')} className="block text-[#E2EDF3]/70 hover:text-white transition-colors font-medium">{t.nav_how}</button>
+              <button onClick={() => scrollToSection('representatives')} className="block text-[#E2EDF3]/70 hover:text-white transition-colors font-medium">{t.nav_representatives}</button>
+              <button onClick={() => scrollToSection('contact')} className="block text-[#E2EDF3]/70 hover:text-white transition-colors font-medium">{t.nav_cta}</button>
             </nav>
           </div>
           <div>
-            <h4 className="font-bold text-xl mb-6 text-white tracking-tight">Kontakti</h4>
+            <h4 className="font-bold text-xl mb-6 text-white tracking-tight">{t.footer_contact_title}</h4>
             <div className="space-y-4 text-[#E2EDF3]/70 font-medium">
-              <p>Tel: [+371 ____ ____]</p>
-              <p>E-pasts: [epasts@domens.lv]</p>
+              <p>Tel: {t.footer_phone_placeholder}</p>
+              <p>E-pasts: {t.footer_email_placeholder}</p>
             </div>
           </div>
           <div></div>
@@ -36,9 +40,9 @@ export function Footer() {
         <div className="border-t border-white/10 pt-8 space-y-6 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div className="space-y-4 max-w-3xl">
             <p className="text-[#E2EDF3]/40 text-sm leading-relaxed font-medium">
-              AJ Broker ir brokeris un nav kredītiestāde. Mēs neizsniedz aizdevumus vai kredītus. Finansējumu nodrošina partneru faktoringa uzņēmumi.
+              {t.footer_disclaimer}
             </p>
-            <p className="text-[#E2EDF3]/60 font-medium text-sm">© 2025 AJ Broker. Visas tiesības aizsargātas.</p>
+            <p className="text-[#E2EDF3]/60 font-medium text-sm">{t.footer_copyright}</p>
           </div>
         </div>
       </div>

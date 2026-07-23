@@ -5,10 +5,12 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { toast } from 'sonner';
+import { useLanguage } from '@/i18n/LanguageContext';
 
 export function ExitIntentModal() {
   const [isOpen, setIsOpen] = useState(false);
   const [phone, setPhone] = useState('');
+  const { t } = useLanguage();
 
   useEffect(() => {
     const hasSeenModal = localStorage.getItem('exit_intent_seen');
@@ -26,7 +28,7 @@ export function ExitIntentModal() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success('Pieteikums nosūtīts', { description: 'Sazināsimies ar jums tuvākajā laikā.' });
+    toast.success(t.exit_toast_title, { description: t.exit_toast_desc });
     setIsOpen(false);
   };
 
@@ -58,27 +60,27 @@ export function ExitIntentModal() {
 
             <div className="relative z-10 text-center">
               <h2 className="text-3xl font-extrabold text-[#0A3250] mb-4 tracking-tight leading-tight">
-                Pagaidiet — pirms dodaties!
+                {t.exit_title}
               </h2>
               <p className="text-lg text-[#0A3250]/70 mb-8 font-medium leading-relaxed">
-                Iegūstiet bezmaksas konsultāciju 15 minūtēs. Mūsu eksperts paskaidros, vai faktorings ir piemērots jūsu situācijai.
+                {t.exit_subtitle}
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-4 text-left">
                 <div className="space-y-3">
-                  <Label htmlFor="exit-phone" className="text-[#0A3250] font-bold ml-1 text-base">Tālrunis</Label>
+                  <Label htmlFor="exit-phone" className="text-[#0A3250] font-bold ml-1 text-base">{t.exit_phone_label}</Label>
                   <Input
                     id="exit-phone"
                     type="tel"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    placeholder="+371 20000000"
+                    placeholder={t.exit_phone_placeholder}
                     className="border-[#0A3250]/10 focus:border-[#6DA4CC] h-14 bg-[#E2EDF3]/30 text-lg rounded-xl shadow-inner transition-colors hover:bg-[#E2EDF3]/50"
                     required
                   />
                 </div>
                 <Button type="submit" className="w-full bg-[#6DA4CC] hover:bg-[#5a8fb8] text-white font-extrabold text-xl py-6 h-auto rounded-xl shadow-lg mt-4 transition-transform hover:-translate-y-1">
-                  Saņemt zvanu
+                  {t.exit_submit}
                 </Button>
               </form>
             </div>

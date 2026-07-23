@@ -1,17 +1,19 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { MapPin, Phone, Mail } from 'lucide-react';
-
-const representatives = [
-  { region: 'Latvija', name: '[Pārstāvja vārds]', phone: '[+371 ____ ____]', email: '[epasts@domens.lv]' },
-  { region: 'Francija', name: '[Pārstāvja vārds]', phone: '[+33 __ __ __ __ __]', email: '[email@domaine.fr]' },
-  { region: 'Vācija', name: '[Pārstāvja vārds]', phone: '[+49 ___ _______]', email: '[email@domain.de]' },
-  { region: 'Igaunija', name: '[Pārstāvja vārds]', phone: '[+372 ____ ____]', email: '[email@domeen.ee]' },
-];
+import { useLanguage } from '@/i18n/LanguageContext';
 
 export function Representatives() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const { t } = useLanguage();
+
+  const representatives = [
+    { region: 'Latvija', name: t.rep_name_placeholder, phone: '[+371 ____ ____]', email: '[epasts@domens.lv]' },
+    { region: 'Francija', name: t.rep_name_placeholder, phone: '[+33 __ __ __ __ __]', email: '[email@domaine.fr]' },
+    { region: 'Vācija', name: t.rep_name_placeholder, phone: '[+49 ___ _______]', email: '[email@domain.de]' },
+    { region: 'Igaunija', name: t.rep_name_placeholder, phone: '[+372 ____ ____]', email: '[email@domeen.ee]' },
+  ];
 
   return (
     <section id="representatives" ref={ref} className="py-24 lg:py-32 bg-white border-t border-[#E2EDF3]">
@@ -23,10 +25,10 @@ export function Representatives() {
           className="text-center mb-16 lg:mb-24"
         >
           <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0A3250] mb-6 tracking-tight">
-            Reģionālie pārstāvji
+            {t.rep_title}
           </h2>
           <p className="text-lg lg:text-xl text-[#0A3250]/70 max-w-2xl mx-auto font-medium">
-            Atrodiet pārstāvi jūsu reģionā
+            {t.rep_subtitle}
           </p>
         </motion.div>
 

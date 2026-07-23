@@ -1,23 +1,25 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { TrendingUp, ShoppingCart, ArrowRight } from 'lucide-react';
-
-const services = [
-  {
-    icon: TrendingUp,
-    title: 'Klasiskais faktorings',
-    description: 'Jūs izrakstāt rēķinu pircējam par precēm vai pakalpojumiem. Mēs atrodam faktoringa uzņēmumu, kas nekavējoties izmaksā jums līdz 90% no rēķina summas. Atlikumu saņemat pēc tam, kad jūsu pircējs norēķinās ar faktoru.',
-  },
-  {
-    icon: ShoppingCart,
-    title: 'Iepirkumu faktorings',
-    description: 'Jums jāiegādājas preces, bet nav iespējas maksāt uzreiz? Mēs atrodam partneri, kas samaksā piegādātājam jūsu vietā. Preces saņemat nekavējoties, un norēķināties pēc 90 dienām — kad realizēsiet produkciju.',
-  },
-];
+import { useLanguage } from '@/i18n/LanguageContext';
 
 export function Services() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const { t } = useLanguage();
+
+  const services = [
+    {
+      icon: TrendingUp,
+      title: t.services_1_title,
+      description: t.services_1_desc,
+    },
+    {
+      icon: ShoppingCart,
+      title: t.services_2_title,
+      description: t.services_2_desc,
+    },
+  ];
 
   const scrollToContact = () => {
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
@@ -33,10 +35,10 @@ export function Services() {
           className="text-center mb-16 lg:mb-24"
         >
           <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0A3250] mb-6 tracking-tight">
-            Faktoringa <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6DA4CC] to-[#0A3250]">veidi</span>
+            {t.services_title} <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6DA4CC] to-[#0A3250]">{t.services_title_highlight}</span>
           </h2>
           <p className="text-lg lg:text-xl text-[#0A3250]/70 max-w-2xl mx-auto font-medium leading-relaxed">
-            Atlasām jums optimālo risinājumu no pārbaudītiem partneriem
+            {t.services_subtitle}
           </p>
         </motion.div>
 
@@ -64,7 +66,7 @@ export function Services() {
                 onClick={scrollToContact}
                 className="inline-flex items-center text-[#6DA4CC] font-extrabold text-xl group/btn hover:text-[#0A3250] transition-colors mt-auto tracking-tight"
               >
-                Uzzināt vairāk
+                {t.services_learn_more}
                 <ArrowRight className="w-6 h-6 ml-2 group-hover/btn:translate-x-2 transition-transform" />
               </button>
             </motion.div>

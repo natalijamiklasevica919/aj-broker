@@ -7,15 +7,17 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Label } from '@/components/ui/label';
 import { toast } from 'sonner';
 import { CheckCircle2, Clock } from 'lucide-react';
+import { useLanguage } from '@/i18n/LanguageContext';
 
 export function ContactForm() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   const [formData, setFormData] = useState({ name: '', company: '', phone: '', email: '', amount: '', description: '' });
+  const { t } = useLanguage();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success('Pieteikums nosūtīts', { description: 'Sazināsimies ar jums tuvākajā laikā.' });
+    toast.success(t.contact_toast_title, { description: t.contact_toast_desc });
     setFormData({ name: '', company: '', phone: '', email: '', amount: '', description: '' });
   };
 
@@ -31,10 +33,13 @@ export function ContactForm() {
           
           <motion.div initial={{ opacity: 0, x: -30 }} animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }} transition={{ duration: 0.6 }}>
             <h2 className="text-4xl lg:text-6xl font-extrabold text-white mb-6 tracking-tight leading-[1.1]">
-              Pieteikties finansējuma atlasei
+              {t.contact_title}
             </h2>
+            <p className="text-xl text-[#E2EDF3]/80 mb-6 leading-relaxed font-medium">
+              {t.contact_subtitle}
+            </p>
             <p className="text-xl text-[#E2EDF3]/80 mb-12 leading-relaxed font-medium">
-              Kāpēc vērts vērsties tagad:
+              {t.contact_why_title}
             </p>
 
             <div className="space-y-8">
@@ -43,8 +48,8 @@ export function ContactForm() {
                   <CheckCircle2 className="w-7 h-7 text-[#6DA4CC]" />
                 </div>
                 <div className="pt-1">
-                  <h4 className="text-white font-extrabold text-xl mb-2 tracking-tight">Bezmaksas analīze</h4>
-                  <p className="text-[#E2EDF3]/70 text-lg font-medium">Jūs nemaksājat par mūsu pakalpojumiem</p>
+                  <h4 className="text-white font-extrabold text-xl mb-2 tracking-tight">{t.contact_why_1_title}</h4>
+                  <p className="text-[#E2EDF3]/70 text-lg font-medium">{t.contact_why_1_desc}</p>
                 </div>
               </div>
               <div className="flex items-start gap-5">
@@ -52,8 +57,8 @@ export function ContactForm() {
                   <CheckCircle2 className="w-7 h-7 text-[#6DA4CC]" />
                 </div>
                 <div className="pt-1">
-                  <h4 className="text-white font-extrabold text-xl mb-2 tracking-tight">Laika ietaupījums</h4>
-                  <p className="text-[#E2EDF3]/70 text-lg font-medium">Zinām visu faktoru prasības</p>
+                  <h4 className="text-white font-extrabold text-xl mb-2 tracking-tight">{t.contact_why_2_title}</h4>
+                  <p className="text-[#E2EDF3]/70 text-lg font-medium">{t.contact_why_2_desc}</p>
                 </div>
               </div>
               <div className="flex items-start gap-5">
@@ -61,8 +66,8 @@ export function ContactForm() {
                   <CheckCircle2 className="w-7 h-7 text-[#6DA4CC]" />
                 </div>
                 <div className="pt-1">
-                  <h4 className="text-white font-extrabold text-xl mb-2 tracking-tight">Labāki nosacījumi</h4>
-                  <p className="text-[#E2EDF3]/70 text-lg font-medium">Partneru līgumu dēļ varam panākt zemāku likmi</p>
+                  <h4 className="text-white font-extrabold text-xl mb-2 tracking-tight">{t.contact_why_3_title}</h4>
+                  <p className="text-[#E2EDF3]/70 text-lg font-medium">{t.contact_why_3_desc}</p>
                 </div>
               </div>
             </div>
@@ -73,47 +78,47 @@ export function ContactForm() {
               <div className="absolute top-0 right-0 w-40 h-40 bg-[#6DA4CC]/10 rounded-full blur-3xl pointer-events-none -translate-y-1/2 translate-x-1/2"></div>
               
               <div className="space-y-3 relative z-10">
-                <Label htmlFor="name" className="text-[#0A3250] font-bold text-base ml-1">Vārds</Label>
+                <Label htmlFor="name" className="text-[#0A3250] font-bold text-base ml-1">{t.contact_label_name}</Label>
                 <Input id="name" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} className="border-[#0A3250]/10 focus:border-[#6DA4CC] h-14 bg-[#E2EDF3]/30 text-lg rounded-xl shadow-inner transition-colors hover:bg-[#E2EDF3]/50" required />
               </div>
               <div className="space-y-3 relative z-10">
-                <Label htmlFor="company" className="text-[#0A3250] font-bold text-base ml-1">Uzņēmums / PVN numurs</Label>
+                <Label htmlFor="company" className="text-[#0A3250] font-bold text-base ml-1">{t.contact_label_company}</Label>
                 <Input id="company" value={formData.company} onChange={(e) => setFormData({ ...formData, company: e.target.value })} className="border-[#0A3250]/10 focus:border-[#6DA4CC] h-14 bg-[#E2EDF3]/30 text-lg rounded-xl shadow-inner transition-colors hover:bg-[#E2EDF3]/50" required />
               </div>
               <div className="grid md:grid-cols-2 gap-6 relative z-10">
                 <div className="space-y-3">
-                  <Label htmlFor="phone" className="text-[#0A3250] font-bold text-base ml-1">Tālrunis</Label>
+                  <Label htmlFor="phone" className="text-[#0A3250] font-bold text-base ml-1">{t.contact_label_phone}</Label>
                   <Input id="phone" type="tel" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} className="border-[#0A3250]/10 focus:border-[#6DA4CC] h-14 bg-[#E2EDF3]/30 text-lg rounded-xl shadow-inner transition-colors hover:bg-[#E2EDF3]/50" required />
                 </div>
                 <div className="space-y-3">
-                  <Label htmlFor="email" className="text-[#0A3250] font-bold text-base ml-1">E-pasts</Label>
+                  <Label htmlFor="email" className="text-[#0A3250] font-bold text-base ml-1">{t.contact_label_email}</Label>
                   <Input id="email" type="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} className="border-[#0A3250]/10 focus:border-[#6DA4CC] h-14 bg-[#E2EDF3]/30 text-lg rounded-xl shadow-inner transition-colors hover:bg-[#E2EDF3]/50" required />
                 </div>
               </div>
               <div className="space-y-3 relative z-10">
-                <Label htmlFor="amount" className="text-[#0A3250] font-bold text-base ml-1">Finansējuma apjoms</Label>
+                <Label htmlFor="amount" className="text-[#0A3250] font-bold text-base ml-1">{t.contact_label_amount}</Label>
                 <Select value={formData.amount} onValueChange={(value) => setFormData({ ...formData, amount: value })} required>
                   <SelectTrigger id="amount" className="border-[#0A3250]/10 focus:border-[#6DA4CC] h-14 bg-[#E2EDF3]/30 text-lg rounded-xl shadow-inner transition-colors hover:bg-[#E2EDF3]/50">
-                    <SelectValue placeholder="Izvēlieties apjomu" />
+                    <SelectValue placeholder={t.contact_amount_placeholder} />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="lidz_10k">līdz 10 000 €</SelectItem>
-                    <SelectItem value="10k_50k">10 000 – 50 000 €</SelectItem>
-                    <SelectItem value="50k_200k">50 000 – 200 000 €</SelectItem>
-                    <SelectItem value="virs_200k">vairāk nekā 200 000 €</SelectItem>
+                    <SelectItem value="lidz_10k">{t.contact_amount_1}</SelectItem>
+                    <SelectItem value="10k_50k">{t.contact_amount_2}</SelectItem>
+                    <SelectItem value="50k_200k">{t.contact_amount_3}</SelectItem>
+                    <SelectItem value="virs_200k">{t.contact_amount_4}</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
               <div className="space-y-3 relative z-10">
-                <Label htmlFor="description" className="text-[#0A3250] font-bold text-base ml-1">Situācijas apraksts (neobligāts)</Label>
-                <Textarea id="description" value={formData.description} onChange={(e) => setFormData({ ...formData, description: e.target.value })} className="border-[#0A3250]/10 focus:border-[#6DA4CC] min-h-[120px] bg-[#E2EDF3]/30 resize-none text-lg rounded-xl shadow-inner transition-colors hover:bg-[#E2EDF3]/50" />
+                <Label htmlFor="description" className="text-[#0A3250] font-bold text-base ml-1">{t.contact_label_desc}</Label>
+                <Textarea id="description" placeholder={t.contact_desc_placeholder} value={formData.description} onChange={(e) => setFormData({ ...formData, description: e.target.value })} className="border-[#0A3250]/10 focus:border-[#6DA4CC] min-h-[120px] bg-[#E2EDF3]/30 resize-none text-lg rounded-xl shadow-inner transition-colors hover:bg-[#E2EDF3]/50" />
               </div>
               <Button type="submit" size="lg" className="w-full bg-[#0A3250] hover:bg-[#1a4a6b] text-white font-extrabold text-xl py-6 h-16 shadow-xl hover:shadow-2xl transition-all mt-6 rounded-xl hover:-translate-y-1 relative z-10">
-                Nosūtīt pieteikumu
+                {t.contact_submit}
               </Button>
               <div className="flex items-center justify-center gap-2 text-sm text-[#0A3250]/60 mt-6 font-bold tracking-wide relative z-10">
                 <Clock className="w-5 h-5" />
-                <span>Parasti atbildam 2 stundu laikā darba laikā</span>
+                <span>{t.contact_response_time}</span>
               </div>
             </form>
           </motion.div>

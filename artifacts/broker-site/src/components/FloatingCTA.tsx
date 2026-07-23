@@ -2,9 +2,11 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/i18n/LanguageContext';
 
 export function FloatingCTA() {
   const [isVisible, setIsVisible] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,7 +35,7 @@ export function FloatingCTA() {
             size="lg"
             className="bg-[#0A3250] hover:bg-[#1a4a6b] text-white shadow-[0_10px_30px_rgba(10,50,80,0.5)] rounded-full px-8 py-7 h-auto text-lg font-extrabold group border border-[#6DA4CC]/40 transition-transform hover:-translate-y-1"
           >
-            Pieteikties
+            {t.floating_cta}
             <ArrowUpRight className="w-6 h-6 ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
           </Button>
         </motion.div>

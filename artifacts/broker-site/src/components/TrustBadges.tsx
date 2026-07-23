@@ -1,10 +1,12 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Building2 } from 'lucide-react';
+import { useLanguage } from '@/i18n/LanguageContext';
 
 export function TrustBadges() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-50px' });
+  const { t } = useLanguage();
 
   return (
     <section ref={ref} className="bg-white py-12 lg:py-16 border-b border-gray-100 relative overflow-hidden">
@@ -16,7 +18,7 @@ export function TrustBadges() {
           className="text-center"
         >
           <p className="text-sm font-bold text-[#0A3250]/40 uppercase tracking-widest mb-8">
-            Mūsu uzticamie partneri
+            {t.trust_title}
           </p>
           <div className="flex flex-wrap justify-center items-center gap-10 md:gap-20 opacity-50 grayscale hover:grayscale-0 transition-all duration-700">
             {[1, 2, 3, 4, 5].map((i) => (

@@ -2,17 +2,19 @@ import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { FileText, Search, Users, Banknote } from 'lucide-react';
 import factoringImage from '@assets/connectf_factoring.png';
-
-const steps = [
-  { icon: FileText, title: '1. Pieteikums', description: 'Iesniedzat pieteikumu un pastāstāt par savu situāciju' },
-  { icon: Search, title: '2. Analīze', description: 'Mēs izpētām jūsu rēķinus, pircējus un vajadzības' },
-  { icon: Users, title: '3. Atlase', description: 'Atlasām labākos piedāvājumus no faktoringa partneruzņēmumiem' },
-  { icon: Banknote, title: '4. Finansējums', description: 'Jūs saņemat naudu kontā no izvēlētā faktora' },
-];
+import { useLanguage } from '@/i18n/LanguageContext';
 
 export function HowItWorks() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const { t } = useLanguage();
+
+  const steps = [
+    { icon: FileText, title: `1. ${t.how_1_title}`, description: t.how_1_desc },
+    { icon: Search, title: `2. ${t.how_2_title}`, description: t.how_2_desc },
+    { icon: Users, title: `3. ${t.how_3_title}`, description: t.how_3_desc },
+    { icon: Banknote, title: `4. ${t.how_4_title}`, description: t.how_4_desc },
+  ];
 
   return (
     <section id="how-it-works" ref={ref} className="py-24 lg:py-32 bg-white relative overflow-hidden">
@@ -26,10 +28,10 @@ export function HowItWorks() {
           className="text-center mb-16 lg:mb-24"
         >
           <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0A3250] mb-6 tracking-tight">
-            Kā mēs <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6DA4CC] to-[#0A3250]">strādājam</span>
+            {t.how_title.split(' ').slice(0, -1).join(' ')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6DA4CC] to-[#0A3250]">{t.how_title.split(' ').slice(-1).join(' ')}</span>
           </h2>
           <p className="text-lg lg:text-xl text-[#0A3250]/70 max-w-2xl mx-auto font-medium">
-            Vienkāršs process — no pieteikuma līdz finansējumam
+            {t.how_subtitle}
           </p>
         </motion.div>
 
@@ -68,7 +70,7 @@ export function HowItWorks() {
             <div className="bg-white rounded-[2rem] shadow-2xl p-6 lg:p-10 relative z-10 border border-[#E2EDF3]/50">
               <img
                 src={factoringImage}
-                alt="Faktoringa shēma"
+                alt={t.how_img_alt}
                 className="w-full h-auto rounded-2xl"
               />
             </div>

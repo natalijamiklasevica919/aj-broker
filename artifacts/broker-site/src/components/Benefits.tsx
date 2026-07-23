@@ -1,20 +1,22 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Zap, TrendingUp, Shield, Target, Sliders, Scale, Award } from 'lucide-react';
-
-const benefits = [
-  { id: '01', icon: Zap, title: 'Tūlītēja likviditāte', description: 'Ātra piekļuve līdzekļiem, nevis gaidīšana pēc pircēja maksājuma' },
-  { id: '02', icon: TrendingUp, title: 'Uzlabota naudas plūsma', description: 'Viegli segt ikdienas izdevumus un ieguldīt attīstībā' },
-  { id: '03', icon: Shield, title: 'Riska mazināšana', description: 'Analizējam jūsu pircēju finansiālo stāvokli' },
-  { id: '04', icon: Target, title: 'Fokuss uz biznesu', description: 'Nodarbojieties ar attīstību, nevis parādu piedziņu' },
-  { id: '05', icon: Sliders, title: 'Elastīgi risinājumi', description: 'Pielāgojam nosacījumus jūsu uzņēmuma konkrētajām vajadzībām' },
-  { id: '06', icon: Scale, title: 'Neitralitāte', description: 'Neesam saistīti ne ar vienu faktoru — izvēlamies labāko jūsu vietā' },
-  { id: '07', icon: Award, title: 'Konkurētspēja', description: 'Tūlītēja piekļuve apgrozāmajam kapitālam ļauj piedāvāt klientiem labākus nosacījumus' },
-];
+import { useLanguage } from '@/i18n/LanguageContext';
 
 export function Benefits() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const { t } = useLanguage();
+
+  const benefits = [
+    { id: '01', icon: Zap, title: t.benefits_1_title, description: t.benefits_1_desc },
+    { id: '02', icon: TrendingUp, title: t.benefits_2_title, description: t.benefits_2_desc },
+    { id: '03', icon: Shield, title: t.benefits_3_title, description: t.benefits_3_desc },
+    { id: '04', icon: Target, title: t.benefits_4_title, description: t.benefits_4_desc },
+    { id: '05', icon: Sliders, title: t.benefits_5_title, description: t.benefits_5_desc },
+    { id: '06', icon: Scale, title: t.benefits_6_title, description: t.benefits_6_desc },
+    { id: '07', icon: Award, title: t.benefits_7_title, description: t.benefits_7_desc },
+  ];
 
   return (
     <section id="benefits" ref={ref} className="py-24 lg:py-32 bg-[#E2EDF3]">
@@ -26,7 +28,7 @@ export function Benefits() {
           className="text-center mb-16 lg:mb-20"
         >
           <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0A3250] tracking-tight">
-            Kāpēc <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6DA4CC] to-[#0A3250]">izvēlas mūs</span>
+            {t.benefits_title.split(' ').slice(0, -2).join(' ')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6DA4CC] to-[#0A3250]">{t.benefits_title.split(' ').slice(-2).join(' ')}</span>
           </h2>
         </motion.div>
 

@@ -1,19 +1,21 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-
-const faqs = [
-  { question: "Kāda ir atšķirība starp brokeri un faktoringa uzņēmumu?", answer: "Faktoringa uzņēmums tieši finansē jūsu darījumus un uzņemas kredītrisku. Brokeris ir neatkarīgs konsultants, kas analizē jūsu situāciju un atlasa labākos nosacījumus no daudziem faktoriem. Mūsu pakalpojumi klientam ir bezmaksas." },
-  { question: "Cik maksā jūsu pakalpojumi?", answer: "Konsultācija un piedāvājumu atlase jums ir pilnīgi bezmaksas. Mēs saņemam atlīdzību no faktoringa uzņēmuma tikai pēc veiksmīga darījuma noslēgšanas." },
-  { question: "Cik ātri var saņemt finansējumu?", answer: "Pēc pieteikuma saņemšanas mēs sniedzam pirmos piedāvājumus 1 darba dienas laikā. Pilna darījuma noformēšana ar faktoru parasti aizņem no 3 līdz 7 darba dienām." },
-  { question: "Vai faktorings ir piemērots mazajiem uzņēmumiem?", answer: "Jā. Lielākā daļa faktoringa uzņēmumu strādā ar biznesu, kas darbojas vismaz 6 mēnešus. Finansējuma apjoma prasības sākas no dažiem desmitiem tūkstošu eiro." },
-  { question: "Mēs strādājam ar pircējiem no citām valstīm — vai tas ir problēma?", answer: "Nē. Lielākā daļa mūsu partneruzņēmumu strādā ar debitoriem visā Eiropas Savienībā un ārpus tās." },
-  { question: "Kādi dokumenti ir nepieciešami sākumam?", answer: "Pirmajā posmā pietiek aizpildīt pieteikumu un pastāstīt par savu situāciju. Dokumentus pieprasa konkrētais faktoringa uzņēmums izskatīšanas stadijā." }
-];
+import { useLanguage } from '@/i18n/LanguageContext';
 
 export function FAQ() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const { t } = useLanguage();
+
+  const faqs = [
+    { question: t.faq_1_q, answer: t.faq_1_a },
+    { question: t.faq_2_q, answer: t.faq_2_a },
+    { question: t.faq_3_q, answer: t.faq_3_a },
+    { question: t.faq_4_q, answer: t.faq_4_a },
+    { question: t.faq_5_q, answer: t.faq_5_a },
+    { question: t.faq_6_q, answer: t.faq_6_a }
+  ];
 
   return (
     <section id="faq" ref={ref} className="py-24 lg:py-32 bg-[#E2EDF3] relative overflow-hidden">
@@ -27,8 +29,11 @@ export function FAQ() {
           className="text-center mb-16 lg:mb-20"
         >
           <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0A3250] mb-6 tracking-tight">
-            Bieži uzdotie jautājumi
+            {t.faq_title}
           </h2>
+          <p className="text-lg lg:text-xl text-[#0A3250]/70 max-w-2xl mx-auto font-medium">
+            {t.faq_subtitle}
+          </p>
         </motion.div>
 
         <motion.div
