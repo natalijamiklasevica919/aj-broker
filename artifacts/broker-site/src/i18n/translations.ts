@@ -3,8 +3,8 @@ export type Lang = 'lv' | 'en';
 export const translations = {
   lv: {
     // AnnouncementBar
-    announcement_free: 'Bezmaksas konsultācija',
-    announcement_speed: 'Piedāvājuma atlase 1 darba dienas laikā',
+    announcement_free: 'Konsultācija',
+    announcement_speed: 'Ātra izskatīšana',
     announcement_geo: 'Strādājam visā Eiropā',
     announcement_close: 'Aizvērt',
 
@@ -20,13 +20,13 @@ export const translations = {
     hero_title_highlight: 'partneris',
     hero_title_2: 'darījumu finansēšanā',
     hero_subtitle: 'Mēs esam brokeris — nefinansējam paši, bet atrodam jums labākos faktoringa nosacījumus no 30+ pārbaudītiem partneriem. Bez slēptām komisijām.',
-    hero_badge_free: 'Bezmaksas',
-    hero_badge_speed: '1 darba dienā',
+    hero_badge_free: 'Bez slēptām maksām',
+    hero_badge_speed: 'Ātra izskatīšana',
     hero_badge_geo: 'Visa Eiropa',
     hero_social_proof: 'Jau uzticās 500+ uzņēmumi',
 
     // QuickLeadForm
-    form_title: 'Saņemt bezmaksas konsultāciju',
+    form_title: 'Saņemt konsultāciju',
     form_name: 'Vārds',
     form_name_placeholder: 'Jānis Bērziņš',
     form_phone: 'Tālrunis',
@@ -43,8 +43,8 @@ export const translations = {
     stats_1_label: 'apstrādāto pieteikumu',
     stats_2_value: '30+',
     stats_2_label: 'partneru faktoringa uzņēmumu',
-    stats_3_value: '1 diena',
-    stats_3_label: 'piedāvājuma atlases termiņš',
+    stats_3_value: 'Ātra',
+    stats_3_label: 'izskatīšana',
     stats_4_value: '0 €',
     stats_4_label: 'konsultācijas izmaksas',
 
@@ -67,8 +67,8 @@ export const translations = {
     benefits_1_desc: 'Ātra piekļuve līdzekļiem, nevis gaidīšana pēc pircēja maksājuma',
     benefits_2_title: 'Uzlabota naudas plūsma',
     benefits_2_desc: 'Viegli segt ikdienas izdevumus un ieguldīt attīstībā',
-    benefits_3_title: 'Riska mazināšana',
-    benefits_3_desc: 'Analizējam jūsu pircēju finansiālo stāvokli',
+    benefits_3_title: 'Pārredzamība',
+    benefits_3_desc: 'Skaidri nosacījumi un pilnīga informācija katrā darījuma posmā',
     benefits_4_title: 'Fokuss uz biznesu',
     benefits_4_desc: 'Nodarbojieties ar attīstību, nevis parādu piedziņu',
     benefits_5_title: 'Elastīgi risinājumi',
@@ -100,11 +100,11 @@ export const translations = {
     faq_title: 'Bieži uzdotie jautājumi',
     faq_subtitle: 'Viss, kas nepieciešams zināt par mūsu darbu un faktoringu',
     faq_1_q: 'Kāda ir atšķirība starp brokeri un faktoringa uzņēmumu?',
-    faq_1_a: 'Faktoringa uzņēmums tieši finansē jūsu darījumus un uzņemas kredītrisku. Brokeris ir neatkarīgs konsultants, kas analizē jūsu situāciju un atlasa labākos nosacījumus no daudziem faktoriem. Mūsu pakalpojumi klientam ir bezmaksas.',
+    faq_1_a: 'Faktoringa uzņēmums tieši finansē jūsu darījumus. Brokeris ir neatkarīgs konsultants, kas analizē jūsu situāciju un atlasa labākos nosacījumus no daudziem faktoriem.',
     faq_2_q: 'Cik maksā jūsu pakalpojumi?',
-    faq_2_a: 'Konsultācija un piedāvājumu atlase jums ir pilnīgi bezmaksas. Mēs saņemam atlīdzību no faktoringa uzņēmuma tikai pēc veiksmīga darījuma noslēgšanas.',
+    faq_2_a: 'Konsultācija un piedāvājumu atlase jums nav jāmaksā. Mēs saņemam atlīdzību no faktoringa uzņēmuma tikai pēc veiksmīga darījuma noslēgšanas.',
     faq_3_q: 'Cik ātri var saņemt finansējumu?',
-    faq_3_a: 'Pēc pieteikuma saņemšanas mēs sniedzam pirmos piedāvājumus 1 darba dienas laikā. Pilna darījuma noformēšana ar faktoru parasti aizņem no 3 līdz 7 darba dienām.',
+    faq_3_a: 'Pēc pieteikuma saņemšanas mūsu komanda veic ātru izskatīšanu un sniedz pirmos piedāvājumus. Pilna darījuma noformēšana ar faktoru parasti aizņem no 3 līdz 7 darba dienām.',
     faq_4_q: 'Vai faktorings ir piemērots mazajiem uzņēmumiem?',
     faq_4_a: 'Jā. Lielākā daļa faktoringa uzņēmumu strādā ar biznesu, kas darbojas vismaz 6 mēnešus. Finansējuma apjoma prasības sākas no dažiem desmitiem tūkstošu eiro.',
     faq_5_q: 'Mēs strādājam ar pircējiem no citām valstīm — vai tas ir problēma?',
@@ -114,9 +114,9 @@ export const translations = {
 
     // ContactForm
     contact_title: 'Pieteikties finansējuma atlasei',
-    contact_subtitle: 'Aprakstiet savu situāciju — mēs bez maksas to analizēsim un atlasīsim optimālo risinājumu no desmitiem partneru.',
+    contact_subtitle: 'Aprakstiet savu situāciju — mēs to analizēsim un atlasīsim optimālo risinājumu no desmitiem partneru.',
     contact_why_title: 'Kāpēc vērts vērsties tagad:',
-    contact_why_1_title: 'Bezmaksas analīze',
+    contact_why_1_title: 'Profesionāla analīze',
     contact_why_1_desc: 'Jūs nemaksājat par mūsu pakalpojumiem — komisiju maksā faktors.',
     contact_why_2_title: 'Laika ietaupījums',
     contact_why_2_desc: 'Zinām visu faktoru prasības un iesniegsim pieteikumu tikai tur, kur to apstiprinās.',
@@ -152,12 +152,12 @@ export const translations = {
     floating_cta: 'Pieteikties',
 
     // StickyContactBar
-    sticky_text: 'Gatavi sākt? Iegūstiet bezmaksas konsultāciju',
+    sticky_text: 'Gatavi sākt? Sazinieties ar mums',
     sticky_cta: 'Pieteikties',
 
     // ExitIntentModal
     exit_title: 'Pagaidiet — pirms dodaties!',
-    exit_subtitle: 'Iegūstiet bezmaksas konsultāciju 15 minūtēs. Mūsu eksperts paskaidros, vai faktorings ir piemērots jūsu situācijai.',
+    exit_subtitle: 'Sazinieties ar mums. Mūsu eksperts paskaidros, vai faktorings ir piemērots jūsu situācijai.',
     exit_phone_label: 'Tālrunis',
     exit_phone_placeholder: '+371 20000000',
     exit_submit: 'Saņemt zvanu',
@@ -167,8 +167,8 @@ export const translations = {
 
   en: {
     // AnnouncementBar
-    announcement_free: 'Free consultation',
-    announcement_speed: 'Offer selection within 1 business day',
+    announcement_free: 'Consultation',
+    announcement_speed: 'Fast review',
     announcement_geo: 'Operating across Europe',
     announcement_close: 'Close',
 
@@ -184,13 +184,13 @@ export const translations = {
     hero_title_highlight: 'partner',
     hero_title_2: 'in business financing',
     hero_subtitle: 'We are a broker — we don\'t finance directly, but find you the best factoring terms from 30+ verified partners. No hidden fees.',
-    hero_badge_free: 'Free',
-    hero_badge_speed: '1 business day',
+    hero_badge_free: 'No hidden fees',
+    hero_badge_speed: 'Fast review',
     hero_badge_geo: 'All Europe',
     hero_social_proof: 'Trusted by 500+ companies',
 
     // QuickLeadForm
-    form_title: 'Get a free consultation',
+    form_title: 'Get a consultation',
     form_name: 'Name',
     form_name_placeholder: 'John Smith',
     form_phone: 'Phone',
@@ -207,8 +207,8 @@ export const translations = {
     stats_1_label: 'applications processed',
     stats_2_value: '30+',
     stats_2_label: 'partner factoring companies',
-    stats_3_value: '1 day',
-    stats_3_label: 'offer selection timeframe',
+    stats_3_value: 'Fast',
+    stats_3_label: 'review',
     stats_4_value: '€0',
     stats_4_label: 'consultation cost',
 
@@ -231,8 +231,8 @@ export const translations = {
     benefits_1_desc: 'Fast access to funds instead of waiting for buyer payments',
     benefits_2_title: 'Improved cash flow',
     benefits_2_desc: 'Easily cover daily expenses and invest in growth',
-    benefits_3_title: 'Risk reduction',
-    benefits_3_desc: 'We analyse the financial standing of your buyers',
+    benefits_3_title: 'Transparency',
+    benefits_3_desc: 'Clear terms and full information at every stage of the transaction',
     benefits_4_title: 'Focus on business',
     benefits_4_desc: 'Concentrate on growth, not chasing debts',
     benefits_5_title: 'Flexible solutions',
@@ -264,11 +264,11 @@ export const translations = {
     faq_title: 'Frequently asked questions',
     faq_subtitle: 'Everything you need to know about working with us and factoring',
     faq_1_q: 'What is the difference between a broker and a factoring company?',
-    faq_1_a: 'A factoring company directly finances your transactions and takes on the credit risk. A broker is an independent consultant who analyses your situation and selects the best terms from many factors. Our services are free of charge to the client.',
+    faq_1_a: 'A factoring company directly finances your transactions. A broker is an independent consultant who analyses your situation and selects the best terms from many factors.',
     faq_2_q: 'How much do your services cost?',
-    faq_2_a: 'The consultation and offer selection are completely free of charge for you. We receive a fee from the factoring company only after a deal is successfully concluded.',
+    faq_2_a: 'The consultation and offer selection come at no cost to you. We receive a fee from the factoring company only after a deal is successfully concluded.',
     faq_3_q: 'How quickly can I receive financing?',
-    faq_3_a: 'After receiving your application, we present the first offers within 1 business day. Full transaction processing with the factor usually takes 3 to 7 business days.',
+    faq_3_a: 'After receiving your application, our team carries out a fast review and presents the first offers promptly. Full transaction processing with the factor usually takes 3 to 7 business days.',
     faq_4_q: 'Is factoring suitable for small businesses?',
     faq_4_a: 'Yes. Most factoring companies work with businesses that have been operating for at least 6 months. Financing requirements start from tens of thousands of euros.',
     faq_5_q: 'We work with buyers from other countries — is that a problem?',
@@ -278,9 +278,9 @@ export const translations = {
 
     // ContactForm
     contact_title: 'Apply for financing selection',
-    contact_subtitle: 'Describe your situation — we will analyse it free of charge and select the optimal solution from dozens of partners.',
+    contact_subtitle: 'Describe your situation — we will analyse it and select the optimal solution from dozens of partners.',
     contact_why_title: 'Why apply now:',
-    contact_why_1_title: 'Free analysis',
+    contact_why_1_title: 'Professional analysis',
     contact_why_1_desc: 'You don\'t pay for our services — the factor pays the fee.',
     contact_why_2_title: 'Time savings',
     contact_why_2_desc: 'We know the requirements of all factors and will only apply where it will be approved.',
@@ -316,12 +316,12 @@ export const translations = {
     floating_cta: 'Apply',
 
     // StickyContactBar
-    sticky_text: 'Ready to start? Get a free consultation',
+    sticky_text: 'Ready to start? Get in touch with us',
     sticky_cta: 'Apply',
 
     // ExitIntentModal
     exit_title: 'Wait — before you go!',
-    exit_subtitle: 'Get a free consultation in 15 minutes. Our expert will explain whether factoring is right for your situation.',
+    exit_subtitle: 'Get in touch with us. Our expert will explain whether factoring is right for your situation.',
     exit_phone_label: 'Phone',
     exit_phone_placeholder: '+371 20000000',
     exit_submit: 'Get a call',
