@@ -73,8 +73,8 @@ export const translations = {
     benefits_4_desc: 'Nodarbojieties ar attīstību, nevis parādu piedziņu',
     benefits_5_title: 'Elastīgi risinājumi',
     benefits_5_desc: 'Pielāgojam nosacījumus jūsu uzņēmuma konkrētajām vajadzībām',
-    benefits_6_title: 'Neitralitāte',
-    benefits_6_desc: 'Neesam saistīti ne ar vienu faktoru — izvēlamies labāko jūsu vietā',
+    benefits_6_title: '',
+    benefits_6_desc: '',
     benefits_7_title: 'Konkurētspēja',
     benefits_7_desc: 'Tūlītēja piekļuve apgrozāmajam kapitālam ļauj piedāvāt klientiem labākus nosacījumus',
 
@@ -237,8 +237,8 @@ export const translations = {
     benefits_4_desc: 'Concentrate on growth, not chasing debts',
     benefits_5_title: 'Flexible solutions',
     benefits_5_desc: 'We tailor terms to your company\'s specific needs',
-    benefits_6_title: 'Independence',
-    benefits_6_desc: 'We are not tied to any single factor — we choose the best for you',
+    benefits_6_title: '',
+    benefits_6_desc: '',
     benefits_7_title: 'Competitiveness',
     benefits_7_desc: 'Instant access to working capital lets you offer better terms to your clients',
 

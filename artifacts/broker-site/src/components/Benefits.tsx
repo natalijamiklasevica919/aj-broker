@@ -16,7 +16,7 @@ export function Benefits() {
     { id: '05', icon: Sliders, title: t.benefits_5_title, description: t.benefits_5_desc },
     { id: '06', icon: Scale, title: t.benefits_6_title, description: t.benefits_6_desc },
     { id: '07', icon: Award, title: t.benefits_7_title, description: t.benefits_7_desc },
-  ];
+  ].filter((b) => b.title !== '');
 
   return (
     <section id="benefits" ref={ref} className="py-24 lg:py-32 bg-[#E2EDF3]">
