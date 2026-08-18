@@ -88,7 +88,7 @@ export const translations = {
     how_3_title: 'Atlase',
     how_3_desc: 'Atlasām labākos piedāvājumus no faktoringa partneruzņēmumiem',
     how_4_title: 'Finansējums',
-    how_4_desc: 'Jūs saņemat naudu kontā no izvēlētā faktora',
+    how_4_desc: 'Jūs saņemat naudu kontā',
     how_img_alt: 'Faktoringa shēma',
 
     // Representatives
@@ -252,7 +252,7 @@ export const translations = {
     how_3_title: 'Selection',
     how_3_desc: 'We select the best offers from our factoring partner companies',
     how_4_title: 'Financing',
-    how_4_desc: 'You receive funds in your account from the chosen factor',
+    how_4_desc: 'You receive funds in your account',
     how_img_alt: 'Factoring scheme',
 
     // Representatives
