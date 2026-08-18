@@ -52,18 +52,20 @@ export function Hero() {
               </div>
             </div>
 
-            <div className="pt-8 border-t border-white/10 flex items-center gap-4">
-              <div className="flex -space-x-3">
-                {[1,2,3,4].map(i => (
-                  <div key={i} className="w-10 h-10 rounded-full border-2 border-[#0A3250] bg-gradient-to-br from-[#6DA4CC] to-[#1a4a6b] flex items-center justify-center text-xs font-bold text-white shadow-md relative z-10 hover:z-20 hover:scale-110 transition-transform">
-                    {String.fromCharCode(64 + i)}
-                  </div>
-                ))}
+            {t.hero_social_proof && (
+              <div className="pt-8 border-t border-white/10 flex items-center gap-4">
+                <div className="flex -space-x-3">
+                  {[1,2,3,4].map(i => (
+                    <div key={i} className="w-10 h-10 rounded-full border-2 border-[#0A3250] bg-gradient-to-br from-[#6DA4CC] to-[#1a4a6b] flex items-center justify-center text-xs font-bold text-white shadow-md relative z-10 hover:z-20 hover:scale-110 transition-transform">
+                      {String.fromCharCode(64 + i)}
+                    </div>
+                  ))}
+                </div>
+                <p className="text-[#E2EDF3]/80 font-bold tracking-wide">
+                  {t.hero_social_proof}
+                </p>
               </div>
-              <p className="text-[#E2EDF3]/80 font-bold tracking-wide">
-                {t.hero_social_proof}
-              </p>
-            </div>
+            )}
           </motion.div>
 
           <motion.div 

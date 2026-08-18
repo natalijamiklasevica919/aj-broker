@@ -23,7 +23,7 @@ export const translations = {
     hero_badge_free: 'Bez slēptām maksām',
     hero_badge_speed: 'Ātra izskatīšana',
     hero_badge_geo: 'Visa Eiropa',
-    hero_social_proof: 'Jau uzticās 500+ uzņēmumi',
+    hero_social_proof: '',
 
     // QuickLeadForm
     form_title: 'Saņemt konsultāciju',
@@ -187,7 +187,7 @@ export const translations = {
     hero_badge_free: 'No hidden fees',
     hero_badge_speed: 'Fast review',
     hero_badge_geo: 'All Europe',
-    hero_social_proof: 'Trusted by 500+ companies',
+    hero_social_proof: '',
 
     // QuickLeadForm
     form_title: 'Get a consultation',
