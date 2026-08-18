@@ -1,8 +1,6 @@
 import { AnnouncementBar } from '@/components/AnnouncementBar';
 import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
-import { StatsStrip } from '@/components/StatsStrip';
-import { TrustBadges } from '@/components/TrustBadges';
 import { Services } from '@/components/Services';
 import { Benefits } from '@/components/Benefits';
 import { HowItWorks } from '@/components/HowItWorks';
@@ -22,8 +20,6 @@ export default function Home() {
       <Header />
       <main className="flex-grow">
         <Hero />
-        <StatsStrip />
-        <TrustBadges />
         <Services />
         <Benefits />
         <HowItWorks />
