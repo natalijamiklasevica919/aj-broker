@@ -9,10 +9,10 @@ export function Representatives() {
   const { t } = useLanguage();
 
   const representatives = [
-    { region: 'Latvija', name: t.rep_name_placeholder, phone: '[+371 ____ ____]', email: '[epasts@domens.lv]' },
-    { region: 'Francija', name: t.rep_name_placeholder, phone: '[+33 __ __ __ __ __]', email: '[email@domaine.fr]' },
-    { region: 'Vācija', name: t.rep_name_placeholder, phone: '[+49 ___ _______]', email: '[email@domain.de]' },
-    { region: 'Igaunija', name: t.rep_name_placeholder, phone: '[+372 ____ ____]', email: '[email@domeen.ee]' },
+    { region: 'Igaunija', name: 'Jevgeni Rozenfeld', phone: '+372 553 2535', email: '' },
+    { region: 'Francija', name: 'Dimitri Pacalo', phone: '+33 628 832 758', email: '' },
+    { region: 'Latvija', name: t.rep_name_placeholder, phone: '', email: '' },
+    { region: 'Vācija', name: t.rep_name_placeholder, phone: '', email: '' },
   ];
 
   return (
@@ -52,14 +52,21 @@ export function Representatives() {
                 <div className="flex items-center gap-4">
                   <span className="text-[#0A3250] font-extrabold text-lg">{rep.name}</span>
                 </div>
-                <div className="flex items-center gap-4 group/item">
-                  <Phone className="w-5 h-5 text-[#6DA4CC] group-hover/item:text-[#0A3250] transition-colors" />
-                  <span className="text-[#0A3250]/80 font-semibold text-lg">{rep.phone}</span>
-                </div>
-                <div className="flex items-center gap-4 group/item">
-                  <Mail className="w-5 h-5 text-[#6DA4CC] group-hover/item:text-[#0A3250] transition-colors" />
-                  <span className="text-[#0A3250]/80 font-semibold text-lg">{rep.email}</span>
-                </div>
+                {rep.phone && (
+                  <div className="flex items-center gap-4 group/item">
+                    <Phone className="w-5 h-5 text-[#6DA4CC] group-hover/item:text-[#0A3250] transition-colors" />
+                    <a href={`tel:${rep.phone.replace(/\s/g, '')}`} className="text-[#0A3250]/80 font-semibold text-lg hover:text-[#0A3250] transition-colors">{rep.phone}</a>
+                  </div>
+                )}
+                {rep.email && (
+                  <div className="flex items-center gap-4 group/item">
+                    <Mail className="w-5 h-5 text-[#6DA4CC] group-hover/item:text-[#0A3250] transition-colors" />
+                    <a href={`mailto:${rep.email}`} className="text-[#0A3250]/80 font-semibold text-lg hover:text-[#0A3250] transition-colors">{rep.email}</a>
+                  </div>
+                )}
+                {!rep.phone && !rep.email && (
+                  <p className="text-[#0A3250]/40 font-medium text-base italic">Drīzumā</p>
+                )}
               </div>
             </motion.div>
           ))}
