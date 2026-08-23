@@ -8,7 +8,6 @@ import { Representatives } from '@/components/Representatives';
 import { FAQ } from '@/components/FAQ';
 import { ContactForm } from '@/components/ContactForm';
 import { Footer } from '@/components/Footer';
-import { FloatingCTA } from '@/components/FloatingCTA';
 import { StickyContactBar } from '@/components/StickyContactBar';
 import { ExitIntentModal } from '@/components/ExitIntentModal';
 
@@ -28,7 +27,6 @@ export default function Home() {
         <ContactForm />
       </main>
       <Footer />
-      <FloatingCTA />
       <StickyContactBar />
     </div>
   );

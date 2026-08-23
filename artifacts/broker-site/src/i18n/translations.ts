@@ -148,9 +148,6 @@ export const translations = {
     footer_copyright: '© 2025 AJ Broker. Visas tiesības aizsargātas.',
     footer_disclaimer: 'AJ Broker ir brokeris un nav kredītiestāde. Mēs neizsniedz aizdevumus vai kredītus. Finansējumu nodrošina partneru faktoringa uzņēmumi.',
 
-    // FloatingCTA
-    floating_cta: 'Pieteikties',
-
     // StickyContactBar
     sticky_text: 'Gatavi sākt? Sazinieties ar mums',
     sticky_cta: 'Pieteikties',
@@ -311,9 +308,6 @@ export const translations = {
     footer_email_placeholder: '[to be provided]',
     footer_copyright: '© 2025 AJ Broker. All rights reserved.',
     footer_disclaimer: 'AJ Broker is a broker and is not a credit institution. We do not issue loans or credits. Financing is provided by our partner factoring companies.',
-
-    // FloatingCTA
-    floating_cta: 'Apply',
 
     // StickyContactBar
     sticky_text: 'Ready to start? Get in touch with us',
