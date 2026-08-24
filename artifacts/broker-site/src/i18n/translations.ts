@@ -152,14 +152,6 @@ export const translations = {
     sticky_text: 'Gatavi sākt? Sazinieties ar mums',
     sticky_cta: 'Pieteikties',
 
-    // ExitIntentModal
-    exit_title: 'Pagaidiet — pirms dodaties!',
-    exit_subtitle: 'Sazinieties ar mums. Mūsu eksperts paskaidros, vai faktorings ir piemērots jūsu situācijai.',
-    exit_phone_label: 'Tālrunis',
-    exit_phone_placeholder: '+371 20000000',
-    exit_submit: 'Saņemt zvanu',
-    exit_toast_title: 'Pieteikums nosūtīts',
-    exit_toast_desc: 'Sazināsimies ar jums tuvākajā laikā.',
   },
 
   en: {
@@ -313,14 +305,6 @@ export const translations = {
     sticky_text: 'Ready to start? Get in touch with us',
     sticky_cta: 'Apply',
 
-    // ExitIntentModal
-    exit_title: 'Wait — before you go!',
-    exit_subtitle: 'Get in touch with us. Our expert will explain whether factoring is right for your situation.',
-    exit_phone_label: 'Phone',
-    exit_phone_placeholder: '+371 20000000',
-    exit_submit: 'Get a call',
-    exit_toast_title: 'Application submitted',
-    exit_toast_desc: 'We will get in touch with you shortly.',
   },
 } as const;
 
