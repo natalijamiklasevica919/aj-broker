@@ -1,0 +1,14 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0A3250"/>
+  <circle cx="1080" cy="80" r="280" fill="#16496B"/>
+  <circle cx="1110" cy="60" r="178" fill="#6DA4CC" fill-opacity=".16"/>
+  <path d="M0 540C250 460 450 600 710 505C930 425 1035 465 1200 395V630H0V540Z" fill="#08263D"/>
+  <path d="M72 72H264V264H72V72Z" stroke="#6DA4CC" stroke-opacity=".4" stroke-width="4"/>
+  <path d="M88 222L125.1 114H146.9L184 222H162.9L155.1 198H116.9L109.1 222H88ZM122.7 181.2H149.3L136 139.4L122.7 181.2Z" fill="white"/>
+  <path d="M179 222V114H198.8V222H179Z" fill="white"/>
+  <path d="M179 114H206.8C234.9 114 249.5 127.8 249.5 152.6C249.5 177.6 234.9 190.5 206.8 190.5H198.8V173.3H206.2C220.6 173.3 228 167.3 228 152.6C228 138.1 220.6 131.3 206.2 131.3H179V114Z" fill="#B9D8E8"/>
+  <text x="72" y="356" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="66" font-weight="700">Factoring broker in Europe</text>
+  <text x="76" y="423" fill="#D8E8F0" font-family="Arial, Helvetica, sans-serif" font-size="28">Clear financing options from 30+ trusted partners.</text>
+  <rect x="76" y="486" width="190" height="5" rx="2.5" fill="#6DA4CC"/>
+  <text x="76" y="548" fill="#B9D8E8" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" letter-spacing="3">AJBROKER.EU</text>
+</svg>

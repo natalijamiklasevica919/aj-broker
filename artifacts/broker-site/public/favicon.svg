@@ -1,4 +1,7 @@
 <svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="180" height="180" rx="36" fill="#0A3250"/>
-  <text x="90" y="91" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="700" letter-spacing="-4">AJ</text>
+  <rect width="180" height="180" rx="38" fill="#0A3250"/>
+  <path d="M30 30H150V150H30V30Z" stroke="#6DA4CC" stroke-opacity=".32" stroke-width="3"/>
+  <path d="M46 126L69.2 54H82.8L106 126H92.8L87.9 110H64.1L59.2 126H46ZM67.7 98.8H84.3L76 70.9L67.7 98.8Z" fill="white"/>
+  <path d="M103 126V54H116.2V126H103Z" fill="white"/>
+  <path d="M103 54H121.5C139.1 54 148 63.2 148 79.7C148 96.4 139.1 105 121.5 105H116.2V93.5H121.1C130.1 93.5 134.7 89.5 134.7 79.7C134.7 70.1 130.1 65.5 121.1 65.5H103V54Z" fill="#B9D8E8"/>
 </svg>
