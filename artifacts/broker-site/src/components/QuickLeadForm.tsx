@@ -8,7 +8,7 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import { submitApplication } from '@workspace/api-client-react';
 
 export function QuickLeadForm() {
-  const [formData, setFormData] = useState({ name: '', phone: '', company: '', website: '' });
+  const [formData, setFormData] = useState({ name: '', phone: '', company: '', email: '', website: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [hasSubmitError, setHasSubmitError] = useState(false);
   const { t } = useLanguage();
@@ -26,7 +26,7 @@ export function QuickLeadForm() {
         description: t.form_toast_desc,
         duration: 5000,
       });
-      setFormData({ name: '', phone: '', company: '', website: '' });
+      setFormData({ name: '', phone: '', company: '', email: '', website: '' });
     } catch {
       setHasSubmitError(true);
       toast.error(t.form_error_title, {
@@ -95,6 +95,20 @@ export function QuickLeadForm() {
             value={formData.company}
             onChange={(e) => setFormData({ ...formData, company: e.target.value })}
             placeholder={t.form_company_placeholder}
+            className="bg-white/5 border-white/20 text-white placeholder:text-white/40 focus:border-white focus:ring-white h-14 rounded-xl transition-all duration-300 hover:bg-white/10 text-lg shadow-inner"
+            required
+          />
+        </div>
+
+        <div className="space-y-2">
+          <Label htmlFor="quick-email" className="text-white/90 font-bold ml-1">{t.form_email}</Label>
+          <Input
+            id="quick-email"
+            type="email"
+            value={formData.email}
+            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+            placeholder={t.form_email_placeholder}
+            autoComplete="email"
             className="bg-white/5 border-white/20 text-white placeholder:text-white/40 focus:border-white focus:ring-white h-14 rounded-xl transition-all duration-300 hover:bg-white/10 text-lg shadow-inner"
             required
           />
