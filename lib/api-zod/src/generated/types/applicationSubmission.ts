@@ -15,4 +15,6 @@ export interface ApplicationSubmission {
   email?: string;
   amount?: string;
   description?: string;
+  /** Hidden bot-detection field. Must be left blank. */
+  website?: string;
 }

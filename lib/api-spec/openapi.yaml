@@ -76,6 +76,9 @@ components:
           type: string
         description:
           type: string
+        website:
+          type: string
+          description: Hidden bot-detection field. Must be left blank.
       required:
         - formType
         - name

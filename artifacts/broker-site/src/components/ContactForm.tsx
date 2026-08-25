@@ -13,7 +13,7 @@ import { submitApplication } from '@workspace/api-client-react';
 export function ContactForm() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
-  const [formData, setFormData] = useState({ name: '', company: '', phone: '', email: '', amount: '', description: '' });
+  const [formData, setFormData] = useState({ name: '', company: '', phone: '', email: '', amount: '', description: '', website: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [hasSubmitError, setHasSubmitError] = useState(false);
   const { t } = useLanguage();
@@ -28,7 +28,7 @@ export function ContactForm() {
         ...formData,
       });
       toast.success(t.contact_toast_title, { description: t.contact_toast_desc });
-      setFormData({ name: '', company: '', phone: '', email: '', amount: '', description: '' });
+      setFormData({ name: '', company: '', phone: '', email: '', amount: '', description: '', website: '' });
     } catch {
       setHasSubmitError(true);
       toast.error(t.contact_error_title, { description: t.contact_error_desc });
@@ -98,6 +98,16 @@ export function ContactForm() {
                   <p className="mt-1 text-sm text-red-800">{t.contact_error_desc}</p>
                 </div>
               )}
+              <div className="absolute -left-[10000px] h-px w-px overflow-hidden" aria-hidden="true">
+                <Label htmlFor="contact-website">Website</Label>
+                <Input
+                  id="contact-website"
+                  value={formData.website}
+                  onChange={(e) => setFormData({ ...formData, website: e.target.value })}
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+              </div>
               
               <div className="space-y-3 relative z-10">
                 <Label htmlFor="name" className="text-[#0A3250] font-bold text-base ml-1">{t.contact_label_name}</Label>

@@ -149,8 +149,8 @@ export const translations = {
     footer_tagline: 'Faktoringa brokeris Eiropā',
     footer_nav_title: 'Navigācija',
     footer_contact_title: 'Kontakti',
-    footer_phone_placeholder: '[norādīt vēlāk]',
-    footer_email_placeholder: '[norādīt vēlāk]',
+    footer_location: 'Latvija, Rīga',
+    footer_email: 'info@ajbroker.eu',
     footer_copyright: '© 2025 AJ Broker. Visas tiesības aizsargātas.',
     footer_disclaimer: 'AJ Broker ir brokeris un nav kredītiestāde. Mēs neizsniedz aizdevumus vai kredītus. Finansējumu nodrošina partneru faktoringa uzņēmumi.',
 
@@ -308,8 +308,8 @@ export const translations = {
     footer_tagline: 'Factoring broker in Europe',
     footer_nav_title: 'Navigation',
     footer_contact_title: 'Contact',
-    footer_phone_placeholder: '[to be provided]',
-    footer_email_placeholder: '[to be provided]',
+    footer_location: 'Latvia, Riga',
+    footer_email: 'info@ajbroker.eu',
     footer_copyright: '© 2025 AJ Broker. All rights reserved.',
     footer_disclaimer: 'AJ Broker is a broker and is not a credit institution. We do not issue loans or credits. Financing is provided by our partner factoring companies.',
 

@@ -1,1 +1,2 @@
-- [Resend sender verification](resend-sender-verification.md) — Resend test-mode connections cannot deliver to external recipients until a sending domain is verified.
+- [Resend sender verification](resend-sender-verification.md) — A verified Resend sender is required before external recipients can receive website applications.
+- [Resend and mailbox routing](resend-mailbox-routing.md) — Resend sending verification and the domain’s inbound mailbox MX route are separate configurations.

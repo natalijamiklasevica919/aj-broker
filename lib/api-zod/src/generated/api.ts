@@ -28,7 +28,8 @@ export const SubmitApplicationBody = zod.object({
   "company": zod.string(),
   "email": zod.string().optional(),
   "amount": zod.string().optional(),
-  "description": zod.string().optional()
+  "description": zod.string().optional(),
+  "website": zod.string().optional().describe('Hidden bot-detection field. Must be left blank.')
 })
 
 export const SubmitApplicationResponse = zod.object({

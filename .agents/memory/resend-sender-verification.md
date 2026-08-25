@@ -3,8 +3,8 @@ name: Resend sender verification
 description: Constraints for sending the broker site's application emails through the attached Resend connection.
 ---
 
-The Resend connection is in test mode until `ajbroker.eu` is verified in Resend. It can only send onboarding-address emails to the account's own email address, and it rejects mail to `info@ajbroker.eu` from an unverified `ajbroker.eu` sender.
+Resend rejects external delivery from unverified sending domains. The website sender should remain configurable through `RESEND_FROM_EMAIL` and use a verified address at the chosen domain.
 
-**Why:** Resend returns a 403 validation error for unverified domains and test-mode external recipients. Showing a success state in this condition would mislead visitors.
+**Why:** A successful local form test does not establish that production recipients can receive messages. Resend returns a validation error for unverified domains, and a success UI in that state would mislead visitors.
 
-**How to apply:** Keep the server-side sender configurable through `RESEND_FROM_EMAIL`; once the domain is verified in Resend, use a verified address at `ajbroker.eu` and re-test both website forms.
+**How to apply:** Set `RESEND_FROM_EMAIL` to the verified sender before release, then submit both website forms and confirm delivery at the destination inbox.

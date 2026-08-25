@@ -8,7 +8,7 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import { submitApplication } from '@workspace/api-client-react';
 
 export function QuickLeadForm() {
-  const [formData, setFormData] = useState({ name: '', phone: '', company: '' });
+  const [formData, setFormData] = useState({ name: '', phone: '', company: '', website: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [hasSubmitError, setHasSubmitError] = useState(false);
   const { t } = useLanguage();
@@ -26,7 +26,7 @@ export function QuickLeadForm() {
         description: t.form_toast_desc,
         duration: 5000,
       });
-      setFormData({ name: '', phone: '', company: '' });
+      setFormData({ name: '', phone: '', company: '', website: '' });
     } catch {
       setHasSubmitError(true);
       toast.error(t.form_error_title, {
@@ -53,6 +53,16 @@ export function QuickLeadForm() {
             <p className="mt-1 text-sm text-red-100/80">{t.form_error_desc}</p>
           </div>
         )}
+        <div className="absolute -left-[10000px] h-px w-px overflow-hidden" aria-hidden="true">
+          <Label htmlFor="quick-website">Website</Label>
+          <Input
+            id="quick-website"
+            value={formData.website}
+            onChange={(e) => setFormData({ ...formData, website: e.target.value })}
+            tabIndex={-1}
+            autoComplete="off"
+          />
+        </div>
         <div className="space-y-2">
           <Label htmlFor="quick-name" className="text-white/90 font-bold ml-1">{t.form_name}</Label>
           <Input

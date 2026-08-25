@@ -31,8 +31,8 @@ export function Footer() {
           <div>
             <h4 className="font-bold text-xl mb-6 text-white tracking-tight">{t.footer_contact_title}</h4>
             <div className="space-y-4 text-[#E2EDF3]/70 font-medium">
-              <p>Tel: {t.footer_phone_placeholder}</p>
-              <p>E-pasts: {t.footer_email_placeholder}</p>
+              <p>{t.footer_location}</p>
+              <p>{t.footer_email}</p>
             </div>
           </div>
           <div></div>

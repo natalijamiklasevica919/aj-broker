@@ -6,6 +6,10 @@ import { logger } from "./lib/logger";
 
 const app: Express = express();
 
+// The application is served through one trusted Replit proxy. This makes
+// req.ip usable for per-visitor submission limits instead of the proxy IP.
+app.set("trust proxy", 1);
+
 app.use(
   pinoHttp({
     logger,
