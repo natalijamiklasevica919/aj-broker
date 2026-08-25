@@ -10,6 +10,8 @@ servers:
 tags:
   - name: health
     description: Health operations
+  - name: applications
+    description: Website application submissions
 paths:
   /healthz:
     get:
@@ -24,6 +26,29 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
+  /applications:
+    post:
+      operationId: submitApplication
+      tags: [applications]
+      summary: Submit a website application
+      description: Sends an application form submission to the broker inbox
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ApplicationSubmission"
+      responses:
+        "200":
+          description: Application email sent
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApplicationSubmissionResponse"
+        "400":
+          description: Invalid application data
+        "502":
+          description: Email delivery failed
 components:
   schemas:
     HealthStatus:
@@ -33,4 +58,34 @@ components:
           type: string
       required:
         - status
+    ApplicationSubmission:
+      type: object
+      properties:
+        formType:
+          type: string
+          enum: [quick, detailed]
+        name:
+          type: string
+        phone:
+          type: string
+        company:
+          type: string
+        email:
+          type: string
+        amount:
+          type: string
+        description:
+          type: string
+      required:
+        - formType
+        - name
+        - phone
+        - company
+    ApplicationSubmissionResponse:
+      type: object
+      properties:
+        message:
+          type: string
+      required:
+        - message
 

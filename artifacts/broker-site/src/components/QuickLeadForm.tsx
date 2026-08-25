@@ -5,18 +5,37 @@ import { Label } from '@/components/ui/label';
 import { toast } from 'sonner';
 import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/i18n/LanguageContext';
+import { submitApplication } from '@workspace/api-client-react';
 
 export function QuickLeadForm() {
   const [formData, setFormData] = useState({ name: '', phone: '', company: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [hasSubmitError, setHasSubmitError] = useState(false);
   const { t } = useLanguage();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success(t.form_toast_title, {
-      description: t.form_toast_desc,
-      duration: 5000,
-    });
-    setFormData({ name: '', phone: '', company: '' });
+    setIsSubmitting(true);
+    setHasSubmitError(false);
+    try {
+      await submitApplication({
+        formType: 'quick',
+        ...formData,
+      });
+      toast.success(t.form_toast_title, {
+        description: t.form_toast_desc,
+        duration: 5000,
+      });
+      setFormData({ name: '', phone: '', company: '' });
+    } catch {
+      setHasSubmitError(true);
+      toast.error(t.form_error_title, {
+        description: t.form_error_desc,
+        duration: 5000,
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -28,6 +47,12 @@ export function QuickLeadForm() {
       </h3>
 
       <form onSubmit={handleSubmit} className="space-y-5 relative z-10">
+        {hasSubmitError && (
+          <div role="alert" aria-live="assertive" className="rounded-xl border border-red-300/50 bg-red-950/35 px-4 py-3 text-left">
+            <p className="font-bold text-red-100">{t.form_error_title}</p>
+            <p className="mt-1 text-sm text-red-100/80">{t.form_error_desc}</p>
+          </div>
+        )}
         <div className="space-y-2">
           <Label htmlFor="quick-name" className="text-white/90 font-bold ml-1">{t.form_name}</Label>
           <Input
@@ -67,10 +92,11 @@ export function QuickLeadForm() {
 
         <Button
           type="submit"
+          disabled={isSubmitting}
           className="w-full bg-[#6DA4CC] hover:bg-[#5a8fb8] text-white border-0 h-16 text-lg font-extrabold mt-6 shadow-[0_10px_20px_rgba(109,164,204,0.3)] rounded-xl group/btn relative overflow-hidden transition-all hover:-translate-y-1"
         >
           <span className="relative z-10 flex items-center justify-center">
-            {t.form_submit}
+            {isSubmitting ? t.form_sending : t.form_submit}
             <ArrowRight className="w-5 h-5 ml-2 group-hover/btn:translate-x-1 transition-transform" />
           </span>
         </Button>

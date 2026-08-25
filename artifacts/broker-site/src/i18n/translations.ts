@@ -34,9 +34,12 @@ export const translations = {
     form_company: 'Uzņēmums / Reģ. nr.',
     form_company_placeholder: 'SIA Ozols',
     form_submit: 'Uzzināt nosacījumus',
+    form_sending: 'Nosūta…',
     form_privacy: 'Nospiežot pogu, jūs piekrītat privātuma politikai',
     form_toast_title: 'Pieteikums nosūtīts',
     form_toast_desc: 'Sazināsimies ar jums tuvākajā laikā.',
+    form_error_title: 'Neizdevās nosūtīt pieteikumu',
+    form_error_desc: 'Lūdzu, mēģiniet vēlreiz vai sazinieties ar mums pa tālruni.',
 
     // StatsStrip
     stats_1_value: '500+',
@@ -135,9 +138,12 @@ export const translations = {
     contact_label_desc: 'Situācijas apraksts (neobligāts)',
     contact_desc_placeholder: 'Piemēram: nepieciešams faktorings darbam ar tīkliem...',
     contact_submit: 'Nosūtīt pieteikumu',
+    contact_sending: 'Nosūta…',
     contact_response_time: 'Parasti atbildam 2 stundu laikā darba laikā',
     contact_toast_title: 'Pieteikums nosūtīts',
     contact_toast_desc: 'Sazināsimies ar jums 2 stundu laikā.',
+    contact_error_title: 'Neizdevās nosūtīt pieteikumu',
+    contact_error_desc: 'Lūdzu, mēģiniet vēlreiz vai sazinieties ar mums pa tālruni.',
 
     // Footer
     footer_tagline: 'Faktoringa brokeris Eiropā',
@@ -187,9 +193,12 @@ export const translations = {
     form_company: 'Company / Reg. no.',
     form_company_placeholder: 'SIA Ozols',
     form_submit: 'Learn the terms',
+    form_sending: 'Sending…',
     form_privacy: 'By clicking, you agree to our privacy policy',
     form_toast_title: 'Application submitted',
     form_toast_desc: 'We will get in touch with you shortly.',
+    form_error_title: 'Could not send your application',
+    form_error_desc: 'Please try again or contact us by phone.',
 
     // StatsStrip
     stats_1_value: '500+',
@@ -288,9 +297,12 @@ export const translations = {
     contact_label_desc: 'Brief description of your situation (optional)',
     contact_desc_placeholder: 'E.g.: need factoring to work with retail chains...',
     contact_submit: 'Submit application',
+    contact_sending: 'Sending…',
     contact_response_time: 'We usually respond within 2 hours during business hours',
     contact_toast_title: 'Application submitted',
     contact_toast_desc: 'We will get in touch within 2 hours.',
+    contact_error_title: 'Could not send your application',
+    contact_error_desc: 'Please try again or contact us by phone.',
 
     // Footer
     footer_tagline: 'Factoring broker in Europe',

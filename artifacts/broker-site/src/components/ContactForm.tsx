@@ -8,17 +8,33 @@ import { Label } from '@/components/ui/label';
 import { toast } from 'sonner';
 import { CheckCircle2, Clock } from 'lucide-react';
 import { useLanguage } from '@/i18n/LanguageContext';
+import { submitApplication } from '@workspace/api-client-react';
 
 export function ContactForm() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   const [formData, setFormData] = useState({ name: '', company: '', phone: '', email: '', amount: '', description: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [hasSubmitError, setHasSubmitError] = useState(false);
   const { t } = useLanguage();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success(t.contact_toast_title, { description: t.contact_toast_desc });
-    setFormData({ name: '', company: '', phone: '', email: '', amount: '', description: '' });
+    setIsSubmitting(true);
+    setHasSubmitError(false);
+    try {
+      await submitApplication({
+        formType: 'detailed',
+        ...formData,
+      });
+      toast.success(t.contact_toast_title, { description: t.contact_toast_desc });
+      setFormData({ name: '', company: '', phone: '', email: '', amount: '', description: '' });
+    } catch {
+      setHasSubmitError(true);
+      toast.error(t.contact_error_title, { description: t.contact_error_desc });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -76,6 +92,12 @@ export function ContactForm() {
           <motion.div initial={{ opacity: 0, y: 30 }} animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }} transition={{ duration: 0.6, delay: 0.2 }} className="w-full">
             <form onSubmit={handleSubmit} className="bg-white rounded-[2.5rem] shadow-2xl p-8 lg:p-12 space-y-6 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-40 h-40 bg-[#6DA4CC]/10 rounded-full blur-3xl pointer-events-none -translate-y-1/2 translate-x-1/2"></div>
+              {hasSubmitError && (
+                <div role="alert" aria-live="assertive" className="relative z-10 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-left">
+                  <p className="font-bold text-red-900">{t.contact_error_title}</p>
+                  <p className="mt-1 text-sm text-red-800">{t.contact_error_desc}</p>
+                </div>
+              )}
               
               <div className="space-y-3 relative z-10">
                 <Label htmlFor="name" className="text-[#0A3250] font-bold text-base ml-1">{t.contact_label_name}</Label>
@@ -113,8 +135,8 @@ export function ContactForm() {
                 <Label htmlFor="description" className="text-[#0A3250] font-bold text-base ml-1">{t.contact_label_desc}</Label>
                 <Textarea id="description" placeholder={t.contact_desc_placeholder} value={formData.description} onChange={(e) => setFormData({ ...formData, description: e.target.value })} className="border-[#0A3250]/10 focus:border-[#6DA4CC] min-h-[120px] bg-[#E2EDF3]/30 resize-none text-lg rounded-xl shadow-inner transition-colors hover:bg-[#E2EDF3]/50" />
               </div>
-              <Button type="submit" size="lg" className="w-full bg-[#0A3250] hover:bg-[#1a4a6b] text-white font-extrabold text-xl py-6 h-16 shadow-xl hover:shadow-2xl transition-all mt-6 rounded-xl hover:-translate-y-1 relative z-10">
-                {t.contact_submit}
+              <Button type="submit" size="lg" disabled={isSubmitting} className="w-full bg-[#0A3250] hover:bg-[#1a4a6b] text-white font-extrabold text-xl py-6 h-16 shadow-xl hover:shadow-2xl transition-all mt-6 rounded-xl hover:-translate-y-1 relative z-10">
+                {isSubmitting ? t.contact_sending : t.contact_submit}
               </Button>
               <div className="flex items-center justify-center gap-2 text-sm text-[#0A3250]/60 mt-6 font-bold tracking-wide relative z-10">
                 <Clock className="w-5 h-5" />

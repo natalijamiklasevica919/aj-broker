@@ -1,0 +1,1 @@
+- [Resend sender verification](resend-sender-verification.md) — Resend test-mode connections cannot deliver to external recipients until a sending domain is verified.
