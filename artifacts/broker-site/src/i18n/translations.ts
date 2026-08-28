@@ -100,7 +100,12 @@ export const translations = {
     rep_title: 'Reģionālie pārstāvji',
     rep_subtitle: 'Atrodiet pārstāvi jūsu reģionā',
     rep_name_placeholder: '[Pārstāvja vārds]',
+    rep_region_estonia: 'Igaunija',
+    rep_region_france: 'Francija',
     rep_region_european_union: 'Eiropas Savienība',
+    rep_partnership_title: 'Sadarbība',
+    rep_partnership_question: 'Vai jūs interesē sadarbība?',
+    rep_partnership_contact: 'Sazinieties ar AJ Broker',
 
     // FAQ
     faq_title: 'Bieži uzdotie jautājumi',
@@ -262,7 +267,12 @@ export const translations = {
     rep_title: 'Regional representatives',
     rep_subtitle: 'Find a representative in your region',
     rep_name_placeholder: '[Representative name]',
+    rep_region_estonia: 'Estonia',
+    rep_region_france: 'France',
     rep_region_european_union: 'European Union',
+    rep_partnership_title: 'Partnership',
+    rep_partnership_question: 'Interested in cooperation?',
+    rep_partnership_contact: 'Contact AJ Broker',
 
     // FAQ
     faq_title: 'Frequently asked questions',

@@ -1,19 +1,34 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { MapPin, Phone, Mail } from 'lucide-react';
+import { Handshake, MapPin, Phone, Mail } from 'lucide-react';
 import { useLanguage } from '@/i18n/LanguageContext';
+
+type Representative = {
+  region: string;
+  name: string;
+  phone: string;
+  email: string;
+  kind?: 'partnership';
+  contactLabel?: string;
+};
 
 export function Representatives() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   const { t } = useLanguage();
 
-  const representatives = [
-    { region: 'Igaunija', name: 'Jevgeni Rozenfeld', phone: '+372 553 2535', email: '' },
-    { region: 'Francija', name: 'Dimitri Pacalo', phone: '+33 628 832 758', email: '' },
+  const representatives: Representative[] = [
+    { region: t.rep_region_estonia, name: 'Jevgeni Rozenfeld', phone: '+372 553 2535', email: '' },
+    { region: t.rep_region_france, name: 'Dimitri Pacalo', phone: '+33 628 832 758', email: '' },
     { region: t.rep_region_european_union, name: 'Sergey Petrov', phone: '+371 29 516 122', email: '' },
-    { region: 'Latvija', name: t.rep_name_placeholder, phone: '', email: '' },
-    { region: 'Vācija', name: t.rep_name_placeholder, phone: '', email: '' },
+    {
+      region: t.rep_partnership_title,
+      name: t.rep_partnership_question,
+      phone: '',
+      email: '',
+      kind: 'partnership',
+      contactLabel: t.rep_partnership_contact,
+    },
   ];
 
   return (
@@ -44,7 +59,11 @@ export function Representatives() {
             >
               <div className="flex items-center gap-5 mb-8 pb-8 border-b border-[#0A3250]/10">
                 <div className="w-14 h-14 rounded-2xl bg-[#0A3250] flex items-center justify-center flex-shrink-0 shadow-lg group-hover:bg-[#6DA4CC] transition-colors duration-500">
-                  <MapPin className="w-6 h-6 text-white" />
+                  {rep.kind === 'partnership' ? (
+                    <Handshake className="w-6 h-6 text-white" />
+                  ) : (
+                    <MapPin className="w-6 h-6 text-white" />
+                  )}
                 </div>
                 <h3 className="text-2xl lg:text-3xl font-extrabold text-[#0A3250] tracking-tight">{rep.region}</h3>
               </div>
@@ -53,20 +72,31 @@ export function Representatives() {
                 <div className="flex items-center gap-4">
                   <span className="text-[#0A3250] font-extrabold text-lg">{rep.name}</span>
                 </div>
-                {rep.phone && (
+                {rep.kind === 'partnership' ? (
+                  <div className="flex items-center gap-4 group/item">
+                    <Mail className="w-5 h-5 text-[#6DA4CC] group-hover/item:text-[#0A3250] transition-colors" />
+                    <a href="#contact" className="text-[#0A3250]/80 font-semibold text-lg hover:text-[#0A3250] transition-colors">
+                      {rep.contactLabel}
+                    </a>
+                  </div>
+                ) : (
+                  <>
+                    {rep.phone && (
                   <div className="flex items-center gap-4 group/item">
                     <Phone className="w-5 h-5 text-[#6DA4CC] group-hover/item:text-[#0A3250] transition-colors" />
                     <a href={`tel:${rep.phone.replace(/\s/g, '')}`} className="text-[#0A3250]/80 font-semibold text-lg hover:text-[#0A3250] transition-colors">{rep.phone}</a>
                   </div>
-                )}
-                {rep.email && (
+                    )}
+                    {rep.email && (
                   <div className="flex items-center gap-4 group/item">
                     <Mail className="w-5 h-5 text-[#6DA4CC] group-hover/item:text-[#0A3250] transition-colors" />
                     <a href={`mailto:${rep.email}`} className="text-[#0A3250]/80 font-semibold text-lg hover:text-[#0A3250] transition-colors">{rep.email}</a>
                   </div>
-                )}
-                {!rep.phone && !rep.email && (
-                  <p className="text-[#0A3250]/40 font-medium text-base italic">Drīzumā</p>
+                    )}
+                    {!rep.phone && !rep.email && (
+                      <p className="text-[#0A3250]/40 font-medium text-base italic">Drīzumā</p>
+                    )}
+                  </>
                 )}
               </div>
             </motion.div>
