@@ -11,6 +11,7 @@ export function Representatives() {
   const representatives = [
     { region: 'Igaunija', name: 'Jevgeni Rozenfeld', phone: '+372 553 2535', email: '' },
     { region: 'Francija', name: 'Dimitri Pacalo', phone: '+33 628 832 758', email: '' },
+    { region: t.rep_region_european_union, name: 'Sergey Petrov', phone: '+371 29 516 122', email: '' },
     { region: 'Latvija', name: t.rep_name_placeholder, phone: '', email: '' },
     { region: 'Vācija', name: t.rep_name_placeholder, phone: '', email: '' },
   ];

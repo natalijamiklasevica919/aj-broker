@@ -100,6 +100,7 @@ export const translations = {
     rep_title: 'Reģionālie pārstāvji',
     rep_subtitle: 'Atrodiet pārstāvi jūsu reģionā',
     rep_name_placeholder: '[Pārstāvja vārds]',
+    rep_region_european_union: 'Eiropas Savienība',
 
     // FAQ
     faq_title: 'Bieži uzdotie jautājumi',
@@ -261,6 +262,7 @@ export const translations = {
     rep_title: 'Regional representatives',
     rep_subtitle: 'Find a representative in your region',
     rep_name_placeholder: '[Representative name]',
+    rep_region_european_union: 'European Union',
 
     // FAQ
     faq_title: 'Frequently asked questions',
