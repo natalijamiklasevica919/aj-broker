@@ -1,5 +1,5 @@
 import { Router, type IRouter, type Request } from "express";
-import { ReplitConnectors } from "@replit/connectors-sdk";
+import { sendApplicationEmail } from "../lib/application-email";
 import {
   SubmitApplicationBody,
   SubmitApplicationResponse,
@@ -120,17 +120,12 @@ router.post("/applications", async (req, res): Promise<void> => {
   ].join("");
 
   try {
-    const connectors = new ReplitConnectors();
-    const response = await connectors.proxy("resend", "/emails", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        from: process.env.RESEND_FROM_EMAIL ?? defaultSender,
-        to: [recipient],
-        subject,
-        html,
-        ...(application.email ? { reply_to: application.email } : {}),
-      }),
+    const response = await sendApplicationEmail({
+      from: process.env.RESEND_FROM_EMAIL ?? defaultSender,
+      to: [recipient],
+      subject,
+      html,
+      ...(application.email ? { reply_to: application.email } : {}),
     });
 
     if (!response.ok) {

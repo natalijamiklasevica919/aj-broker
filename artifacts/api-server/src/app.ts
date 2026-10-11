@@ -6,7 +6,7 @@ import { logger } from "./lib/logger";
 
 const app: Express = express();
 
-// The application is served through one trusted Replit proxy. This makes
+// The application is served through one trusted hosting proxy. This makes
 // req.ip usable for per-visitor submission limits instead of the proxy IP.
 app.set("trust proxy", 1);
 
