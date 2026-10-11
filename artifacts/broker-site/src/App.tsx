@@ -5,6 +5,7 @@ import NotFound from '@/pages/not-found';
 import Home from '@/pages/Home';
 import { Route, Switch, Router as WouterRouter } from 'wouter';
 import { LanguageProvider } from '@/i18n/LanguageContext';
+import { Analytics } from '@vercel/analytics/react';
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,7 @@ function App() {
             <Router />
           </WouterRouter>
           <Toaster richColors position="top-right" />
+          <Analytics />
         </TooltipProvider>
       </QueryClientProvider>
     </LanguageProvider>
